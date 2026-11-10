@@ -1,0 +1,120 @@
+
+/* ====================================
+   科目ページ：授業・課題の2列表示
+==================================== */
+
+.subject-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.subject-panel {
+  background: white;
+  border: 1px solid #d7e1da;
+  border-radius: 12px;
+  padding: 22px;
+  min-width: 0;
+}
+
+.subject-panel h2 {
+  margin: 0 0 18px;
+  font-size: 24px;
+}
+
+.subject-links {
+  display: grid;
+  gap: 12px;
+}
+
+.subject-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+
+  border: 1px solid #d7e1da;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #126451;
+  line-height: 1.6;
+}
+
+.subject-links a:hover {
+  background: #edf5ef;
+  border-color: #16735b;
+}
+
+.subject-links a span {
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+/* ====================================
+   課題ページ
+==================================== */
+
+.task-page {
+  max-width: 900px;
+}
+
+.task-page h1 {
+  margin-top: 32px;
+}
+
+.task-box {
+  line-height: 1.8;
+}
+
+.task-box h2 {
+  margin-top: 0;
+}
+
+/* 解答の表示・非表示 */
+.answer-toggle summary {
+  display: inline-block;
+  list-style: none;
+  cursor: pointer;
+
+  background: #17634f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.answer-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.answer-toggle summary:focus-visible {
+  outline: 4px solid #e7ad37;
+  outline-offset: 4px;
+}
+
+.answer-toggle:not([open]) .open-label,
+.answer-toggle[open] .closed-label {
+  display: none;
+}
+
+.answer-toggle .answer-box {
+  margin-top: 16px;
+  border-left: 4px solid #17634f;
+}
+
+.page-back {
+  margin-top: 36px;
+}
+
+/* スマートフォンでは縦1列 */
+@media (max-width: 720px) {
+  .subject-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-panel {
+    padding: 18px;
+  }
+}

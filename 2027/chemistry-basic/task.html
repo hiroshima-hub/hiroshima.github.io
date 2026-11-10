@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>課題｜化学基礎</title>
+
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/subject.css">
+</head>
+
+<body>
+  <header>
+    <a href="../../index.html">
+      理科と情報 ｜ 授業ライブラリ
+    </a>
+  </header>
+
+  <main class="task-page">
+    <p>
+      <a href="./index.html">← 課題一覧へ戻る</a>
+    </p>
+
+    <!-- 問題の表示 -->
+    <article id="task-problem" class="task-content">
+      課題を読み込んでいます...
+    </article>
+
+    <!-- 解答：最初は非表示 -->
+    <details id="answer-toggle"
+             class="answer-toggle" hidden>
+      <summary>
+        <span class="closed-label">解答を表示</span>
+        <span class="open-label">解答を隠す</span>
+      </summary>
+
+      <article id="task-answer" class="task-content">
+      </article>
+    </details>
+  </main>
+
+  <script type="module">
+    import { marked } from "../../assets/marked.esm.js";
+
+    const params = new URLSearchParams(location.search);
+    const task = params.get("task");
+
+    const problem = document.getElementById("task-problem");
+    const answer = document.getElementById("task-answer");
+    const toggle = document.getElementById("answer-toggle");
+
+    // 課題番号は2～3桁の数字に限定
+    if (!task || !/^\d{2,3}$/.test(task)) {
+      problem.textContent = "課題番号が正しくありません。";
+    } else {
+      try {
+        const response = await fetch(`./tasks/${task}.md`);
+
+        if (!response.ok) {
+          throw new Error("課題が見つかりません");
+        }
+
+        const markdown = (await response.text())
+          .replace(/\r\n?/g, "\n");
+
+        // 「## 解答」で問題と解答を分ける
+        const parts = markdown.split(
+          /^##[ \t]+解答[ \t]*$/m
+        );
+
+        if (parts.length !== 2) {
+          throw new Error("解答の見出しを確認してください");
+        }
+
+        // Markdownを通常のHTMLとして表示
+        problem.innerHTML = marked.parse(parts[0]);
+        answer.innerHTML = marked.parse(parts[1]);
+
+        // 解答表示ボタンを有効化
+        toggle.hidden = false;
+
+        // ページタイトルを設定
+        const title = problem.querySelector("h1");
+        if (title) {
+          document.title =
+            title.textContent + "｜化学基礎";
+        }
+
+      } catch (error) {
+        problem.textContent = error.message;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -6,15 +6,14 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>化学基礎｜授業一覧</title>
+  <title>化学基礎｜授業・課題一覧</title>
 
-  <!-- サイト共通CSS -->
-  <link rel="stylesheet"
-        href="../../assets/style.css">
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/subject.css">
 </head>
 
 <body>
-
   <header>
     <a href="../../index.html">
       理科と情報 ｜ 授業ライブラリ
@@ -28,42 +27,63 @@
 
     <section class="hero">
       <h1>化学基礎</h1>
-      <p>2027年度 授業資料一覧</p>
+      <p>2027年度 授業資料・課題</p>
     </section>
 
-    <h2>授業一覧</h2>
+    <!-- 授業と課題の2列表示 -->
+    <div class="subject-columns">
 
-    <div class="grid">
+      <!-- 左列：授業一覧 -->
+      <section class="subject-panel">
+        <h2>授業一覧</h2>
 
-      <!-- 第1回 -->
-      <a class="card"
-         href="./slides.html?lesson=01">
-        <span class="tag">第1回</span>
-        <strong>原子の構造</strong>
-        <span>スライドを表示 →</span>
-      </a>
+        <nav class="subject-links" aria-label="授業一覧">
 
-      <!-- 第2回 -->
-      <a class="card"
-         href="./slides.html?lesson=02">
-        <span class="tag">第2回</span>
-        <strong>物質の三態と熱運動</strong>
-        <span>スライドを表示 →</span>
-      </a>
+          <a href="./slides.html?lesson=01">
+            第1回　原子の構造
+            <span aria-hidden="true">›</span>
+          </a>
 
-      <!-- 新しい授業はここに追加 -->
+          <a href="./slides.html?lesson=02">
+            第2回　物質の三態と熱運動
+            <span aria-hidden="true">›</span>
+          </a>
+
+          <!-- 新しい授業はここに追加 -->
+
+        </nav>
+      </section>
+
+      <!-- 右列：課題一覧 -->
+      <section class="subject-panel">
+        <h2>課題一覧</h2>
+
+        <nav class="subject-links" aria-label="課題一覧">
+
+          <a href="./task.html?task=01">
+            課題1　原子の構造 基本問題
+            <span aria-hidden="true">›</span>
+          </a>
+
+          <a href="./task.html?task=02">
+            課題2　三態と熱運動 確認問題
+            <span aria-hidden="true">›</span>
+          </a>
+
+          <!-- 新しい課題はここに追加 -->
+
+        </nav>
+      </section>
 
     </div>
 
-    <p>
+    <p class="page-back">
       <a href="../../index.html">
         ← サイトトップへ戻る
       </a>
     </p>
-
   </main>
 
   <footer>2027年度</footer>
-
 </body>
 </html>

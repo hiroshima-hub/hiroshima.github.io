@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>粒子モデル：温度・圧力・粒子間引力</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg:#f4f6f8; --panel:#ffffff; --ink:#17202a; --muted:#5f6b76;
+    --line:#d6dde3; --blue:#2f6fae; --red:#aa4b38; --gold:#a47414;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:14px 18px 10px; background:var(--panel); border-bottom:1px solid var(--line); }
+  h1 { margin:0 0 4px; font-size:20px; }
+  header p { margin:0; color:var(--muted); font-size:13px; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:12px; padding:12px; max-width:1500px; margin:0 auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .canvas-wrap { padding:10px; }
+  #simCanvas { display:block; width:100%; height:auto; aspect-ratio:5/3; border:1px solid #9aa6b2; border-radius:8px; background:#fbfcfd; }
+  .legend { display:flex; gap:18px; flex-wrap:wrap; margin-top:8px; color:var(--muted); font-size:12px; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .dot { width:12px; height:12px; border-radius:50%; background:#3d7bc4; border:1px solid #1f4e85; }
+  .line-sample { width:22px; height:2px; background:rgba(43,123,199,.45); }
+  .arrow-sample { width:22px; height:2px; background:#b64f3a; position:relative; }
+  .arrow-sample:after { content:""; position:absolute; right:-1px; top:-3px; border-left:6px solid #b64f3a; border-top:4px solid transparent; border-bottom:4px solid transparent; }
+  .piston-sample { width:24px; height:7px; border:1px solid #765716; background:#d7ad4c; }
+  aside { display:flex; flex-direction:column; gap:12px; }
+  .controls,.metrics,.notes { padding:14px; }
+  .controls h2,.metrics h2,.notes h2 { margin:0 0 10px; font-size:16px; }
+  .control-row { margin-bottom:14px; }
+  .control-row label { display:flex; justify-content:space-between; gap:10px; font-weight:600; font-size:14px; margin-bottom:5px; }
+  .subnote { color:var(--muted); font-size:11.5px; line-height:1.4; margin-top:3px; }
+  input[type="range"] { width:100%; }
+  .buttons { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  button { border:1px solid #aeb8c2; background:#fff; color:var(--ink); border-radius:7px; padding:8px 10px; cursor:pointer; font-weight:600; }
+  button:hover { background:#f0f4f8; }
+  .preset-label { margin-top:10px; margin-bottom:5px; font-size:12px; color:var(--muted); }
+  .preset-row { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+  .checks { display:grid; gap:6px; margin-top:10px; font-size:13px; }
+  .metric { display:grid; grid-template-columns:1fr auto; gap:8px; padding:6px 0; border-bottom:1px solid #edf0f2; font-size:13px; }
+  .metric:last-child { border-bottom:none; }
+  .metric strong { font-variant-numeric:tabular-nums; }
+  .state { margin-bottom:10px; padding:10px; border-radius:8px; background:#eef3f8; border:1px solid #d5e0ea; }
+  .state b { display:block; font-size:17px; margin-bottom:2px; }
+  .state small { color:var(--muted); }
+  .pressure-box { margin:10px 0; padding:9px; border-radius:8px; background:#fff8e5; border:1px solid #ead7a3; }
+  .pressure-box .row { display:grid; grid-template-columns:1fr auto; gap:8px; font-size:12.5px; padding:2px 0; }
+  .pressure-box strong { font-variant-numeric:tabular-nums; }
+  .bar { height:10px; background:#edf0f2; border-radius:5px; overflow:hidden; margin-top:3px; }
+  .bar > span { display:block; height:100%; width:0%; transition:width .15s linear; }
+  #kBar { background:var(--red); }
+  #uBar { background:var(--blue); }
+  .notes p,.notes li { font-size:12.5px; line-height:1.55; color:#36414b; }
+  .notes ul { margin:6px 0 0; padding-left:18px; }
+  .warning { margin-top:10px; padding:8px; border-left:4px solid #b17800; background:#fff7df; font-size:12px; line-height:1.5; }
+  footer { max-width:1500px; margin:0 auto 14px; padding:0 12px; color:var(--muted); font-size:11px; }
+  @media (max-width:940px) { main { grid-template-columns:1fr; } aside { display:grid; grid-template-columns:1fr 1fr; } .notes { grid-column:1/-1; } }
+  @media (max-width:650px) { aside { display:flex; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>粒子モデル：熱運動・粒子間引力・圧力</h1>
+  <p>外圧を「重りを載せた可動ピストン」として表現する、2次元 Lennard–Jones 授業用モデルです。</p>
+</header>
+
+<main>
+  <section class="card canvas-wrap">
+    <canvas id="simCanvas" width="1000" height="600" aria-label="温度と圧力を変更できる粒子シミュレーション"></canvas>
+    <div class="legend">
+      <span><i class="dot"></i>粒子</span>
+      <span><i class="line-sample"></i>近距離の引力</span>
+      <span><i class="arrow-sample"></i>速度ベクトル</span>
+      <span><i class="piston-sample"></i>外圧を受けるピストン</span>
+    </div>
+  </section>
+
+  <aside>
+    <section class="card controls">
+      <h2>操作</h2>
+
+      <div class="control-row">
+        <label for="nSlider"><span>粒子数 N</span><output id="nOut">72</output></label>
+        <input id="nSlider" type="range" min="20" max="140" step="4" value="72" />
+      </div>
+
+      <div class="control-row">
+        <label for="tSlider"><span>相対温度 T* = kBT/ε</span><output id="tOut">0.55</output></label>
+        <input id="tSlider" type="range" min="0.05" max="2.00" step="0.01" value="0.55" />
+      </div>
+
+      <div class="control-row">
+        <label for="pSlider"><span>外圧 P* = Pσ²/ε</span><output id="pOut">0.20</output></label>
+        <input id="pSlider" type="range" min="0.02" max="1.20" step="0.01" value="0.20" />
+        <div class="subnote">圧力を箱の大きさそのものにはせず、外圧を指定するとピストンが動き、容積が結果として変わります。</div>
+      </div>
+
+      <div class="buttons">
+        <button id="pauseBtn">一時停止</button>
+        <button id="resetBtn">凝集状態から再配置</button>
+      </div>
+
+      <div class="preset-label">温度プリセット</div>
+      <div class="preset-row">
+        <button data-temp="0.12">低温</button>
+        <button data-temp="0.55">中温</button>
+        <button data-temp="1.45">高温</button>
+      </div>
+
+      <div class="preset-label">外圧プリセット</div>
+      <div class="preset-row">
+        <button data-pressure="0.04">低圧</button>
+        <button data-pressure="0.20">中圧</button>
+        <button data-pressure="0.80">高圧</button>
+      </div>
+
+      <div class="checks">
+        <label><input id="bondCheck" type="checkbox" checked /> 引力の線を表示</label>
+        <label><input id="velCheck" type="checkbox" checked /> 速度ベクトルを表示</label>
+        <label><input id="slowCheck" type="checkbox" /> スローモーション</label>
+        <label><input id="lockVolumeCheck" type="checkbox" /> ピストンを固定して圧力だけ測る</label>
+      </div>
+    </section>
+
+    <section class="card metrics">
+      <h2>観察量</h2>
+      <div class="state">
+        <b id="stateText">判定中</b>
+        <small id="stateDesc">有限個の2次元模型による状態の目安</small>
+      </div>
+
+      <div class="pressure-box">
+        <div class="row"><span>設定外圧 P*<sub>ext</sub></span><strong id="targetPressureMetric">–</strong></div>
+        <div class="row"><span>実測内圧 P*<sub>int</sub></span><strong id="pressureMetric">–</strong></div>
+        <div class="row"><span>圧力差 P*<sub>int</sub>−P*<sub>ext</sub></span><strong id="pressureDiffMetric">–</strong></div>
+      </div>
+
+      <div class="metric"><span>実測相対温度</span><strong id="tempMetric">–</strong></div>
+      <div class="metric"><span>容器高さ L<sub>y</sub></span><strong id="heightMetric">–</strong></div>
+      <div class="metric"><span>2D容積（面積）A</span><strong id="areaMetric">–</strong></div>
+      <div class="metric"><span>数密度 N/A</span><strong id="densityMetric">–</strong></div>
+      <div class="metric"><span>最大凝集体の割合</span><strong id="clusterMetric">–</strong></div>
+      <div class="metric"><span>平均近接粒子数</span><strong id="neighborMetric">–</strong></div>
+      <div class="metric"><span>六方秩序の目安 ψ₆</span><strong id="psiMetric">–</strong></div>
+
+      <div style="margin-top:10px;font-size:12px;">
+        <div>平均運動エネルギー K/N</div>
+        <div class="bar"><span id="kBar"></span></div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;">
+        <div>引力的ポテンシャルの大きさ |U<sub>attr</sub>|/N</div>
+        <div class="bar"><span id="uBar"></span></div>
+      </div>
+    </section>
+
+    <section class="card notes">
+      <h2>授業での読み方</h2>
+      <ul>
+        <li>外圧を上げると、重りが増え、内圧との釣り合いに向かってピストンが下がります。</li>
+        <li>箱が小さいことを圧力そのものとは扱いません。箱の縮小は、外圧による圧縮の結果です。</li>
+        <li>内圧は、粒子の熱運動による項と粒子間相互作用による項から算出した瞬間値を平滑化して表示します。</li>
+        <li>「ピストンを固定」を選ぶと、容積一定のまま温度・粒子数と内圧の関係を比較できます。</li>
+      </ul>
+      <div class="warning">このモデルの圧力・温度は無次元量です。実在の水の Pa、℃、融点、沸点を直接再現するものではありません。また、K/N と |U|/N が等しくなることを相変化条件にはしていません。</div>
+    </section>
+  </aside>
+</main>
+
+<footer>教育用の単純化された2次元モデルです。実在分子の形、水素結合、3次元結晶、核生成、正確な相図は再現していません。</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  const canvas = document.getElementById("simCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const nSlider = document.getElementById("nSlider");
+  const tSlider = document.getElementById("tSlider");
+  const pSlider = document.getElementById("pSlider");
+  const nOut = document.getElementById("nOut");
+  const tOut = document.getElementById("tOut");
+  const pOut = document.getElementById("pOut");
+  const pauseBtn = document.getElementById("pauseBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const bondCheck = document.getElementById("bondCheck");
+  const velCheck = document.getElementById("velCheck");
+  const slowCheck = document.getElementById("slowCheck");
+  const lockVolumeCheck = document.getElementById("lockVolumeCheck");
+
+  const stateText = document.getElementById("stateText");
+  const stateDesc = document.getElementById("stateDesc");
+  const targetPressureMetric = document.getElementById("targetPressureMetric");
+  const pressureMetric = document.getElementById("pressureMetric");
+  const pressureDiffMetric = document.getElementById("pressureDiffMetric");
+  const tempMetric = document.getElementById("tempMetric");
+  const heightMetric = document.getElementById("heightMetric");
+  const areaMetric = document.getElementById("areaMetric");
+  const densityMetric = document.getElementById("densityMetric");
+  const clusterMetric = document.getElementById("clusterMetric");
+  const neighborMetric = document.getElementById("neighborMetric");
+  const psiMetric = document.getElementById("psiMetric");
+  const kBar = document.getElementById("kBar");
+  const uBar = document.getElementById("uBar");
+
+  const model = {
+    Lx: 40,
+    Ly: 24,
+    minLy: 8,
+    maxLy: 36,
+    displayMaxLy: 38,
+    rc: 2.5,
+    dt: 0.0025,
+    thermostatTau: 0.20,
+    barostatRate: 0.65,
+    particles: [],
+    targetT: Number(tSlider.value),
+    targetP: Number(pSlider.value),
+    running: true,
+    potential: 0,
+    attractivePotential: 0,
+    virial: 0,
+    measuredT: 0,
+    pressureInstant: 0,
+    measuredP: 0,
+    pressureReady: false,
+    frame: 0
+  };
+
+  const Ucut = 4 * ((1 / model.rc) ** 12 - (1 / model.rc) ** 6);
+
+  function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
+
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function setVelocityForTemperature(T) {
+    const p = model.particles;
+    if (!p.length) return;
+
+    let vxMean = 0, vyMean = 0;
+    for (const a of p) {
+      a.vx = randn();
+      a.vy = randn();
+      vxMean += a.vx;
+      vyMean += a.vy;
+    }
+    vxMean /= p.length;
+    vyMean /= p.length;
+
+    let sumv2 = 0;
+    for (const a of p) {
+      a.vx -= vxMean;
+      a.vy -= vyMean;
+      sumv2 += a.vx * a.vx + a.vy * a.vy;
+    }
+
+    const dof = Math.max(2, 2 * p.length - 2);
+    const currentT = sumv2 / dof;
+    const scale = Math.sqrt(Math.max(T, 1e-5) / Math.max(currentT, 1e-8));
+    for (const a of p) {
+      a.vx *= scale;
+      a.vy *= scale;
+    }
+  }
+
+  function resetParticles() {
+    const N = Number(nSlider.value);
+    model.particles = [];
+    model.Ly = 24;
+    model.pressureReady = false;
+
+    const spacing = 1.12;
+    const cols = Math.ceil(Math.sqrt(N * 1.4));
+    const rows = Math.ceil(N / cols);
+    const width = (cols - 1) * spacing + spacing * 0.5;
+    const height = (rows - 1) * spacing * 0.87;
+    const startX = (model.Lx - width) / 2;
+    const startY = Math.max(1.0, (model.Ly - height) / 2);
+
+    let count = 0;
+    for (let r = 0; r < rows && count < N; r++) {
+      for (let c = 0; c < cols && count < N; c++) {
+        const x = startX + c * spacing + (r % 2) * spacing * 0.5 + (Math.random() - 0.5) * 0.03;
+        const y = startY + r * spacing * 0.87 + (Math.random() - 0.5) * 0.03;
+        model.particles.push({ x, y, vx:0, vy:0, fx:0, fy:0 });
+        count++;
+      }
+    }
+
+    setVelocityForTemperature(model.targetT);
+    thermostat(0);
+    computeForces();
+    measureThermodynamics();
+    updateReadouts();
+  }
+
+  function computeForces() {
+    const p = model.particles;
+    for (const a of p) { a.fx = 0; a.fy = 0; }
+
+    let U = 0;
+    let Uattr = 0;
+    let virial = 0;
+    const rc2 = model.rc * model.rc;
+
+    for (let i = 0; i < p.length - 1; i++) {
+      for (let j = i + 1; j < p.length; j++) {
+        const dx = p[j].x - p[i].x;
+        const dy = p[j].y - p[i].y;
+        const rawR2 = dx * dx + dy * dy;
+        if (rawR2 >= rc2) continue;
+
+        const r2 = Math.max(rawR2, 0.64);
+        const inv2 = 1 / r2;
+        const sr6 = inv2 * inv2 * inv2;
+        const sr12 = sr6 * sr6;
+        const pairU = 4 * (sr12 - sr6) - Ucut;
+        U += pairU;
+        if (pairU < 0) Uattr += pairU;
+
+        let fScalar = 24 * (sr6 - 2 * sr12) * inv2;
+        fScalar = clamp(fScalar, -160, 160);
+        const fx = fScalar * dx;
+        const fy = fScalar * dy;
+
+        p[i].fx += fx;
+        p[i].fy += fy;
+        p[j].fx -= fx;
+        p[j].fy -= fy;
+
+        // r_ij = r_i - r_j、F_ij = 粒子jがiに及ぼす力。
+        // 現在の dx,dy は r_j-r_i なので符号を反転する。
+        virial += -(dx * fx + dy * fy);
+      }
+    }
+
+    model.potential = U;
+    model.attractivePotential = Uattr;
+    model.virial = virial;
+  }
+
+  function applyWalls(a) {
+    const pad = 0.55;
+
+    if (a.x < pad) {
+      a.x = pad;
+      if (a.vx < 0) a.vx *= -0.94;
+    } else if (a.x > model.Lx - pad) {
+      a.x = model.Lx - pad;
+      if (a.vx > 0) a.vx *= -0.94;
+    }
+
+    if (a.y < pad) {
+      a.y = pad;
+      if (a.vy < 0) a.vy *= -0.94;
+    } else if (a.y > model.Ly - pad) {
+      a.y = model.Ly - pad;
+      if (a.vy > 0) a.vy *= -0.94;
+    }
+  }
+
+  function thermostat(dt) {
+    const p = model.particles;
+    if (p.length < 2) return;
+
+    let vxMean = 0, vyMean = 0;
+    for (const a of p) { vxMean += a.vx; vyMean += a.vy; }
+    vxMean /= p.length;
+    vyMean /= p.length;
+
+    let sumv2 = 0;
+    for (const a of p) {
+      a.vx -= vxMean;
+      a.vy -= vyMean;
+      sumv2 += a.vx * a.vx + a.vy * a.vy;
+    }
+
+    const dof = 2 * p.length - 2;
+    const T = sumv2 / dof;
+    model.measuredT = T;
+
+    const target = Math.max(model.targetT, 0.001);
+    let lambda = Math.sqrt(1 + (dt / model.thermostatTau) * (target / Math.max(T, 1e-8) - 1));
+    lambda = clamp(lambda, 0.97, 1.03);
+    for (const a of p) { a.vx *= lambda; a.vy *= lambda; }
+  }
+
+  function measureThermodynamics() {
+    const N = model.particles.length;
+    const A = model.Lx * model.Ly;
+    const rho = N / A;
+    const P = rho * model.measuredT + model.virial / (2 * A);
+    model.pressureInstant = P;
+
+    if (!model.pressureReady || !Number.isFinite(model.measuredP)) {
+      model.measuredP = P;
+      model.pressureReady = true;
+    } else {
+      model.measuredP = 0.965 * model.measuredP + 0.035 * P;
+    }
+  }
+
+  function applyPressureControl(dt) {
+    if (lockVolumeCheck.checked || !model.pressureReady) return;
+
+    const error = clamp(model.measuredP - model.targetP, -2.0, 2.0);
+    const dln = clamp(model.barostatRate * error * dt, -0.0012, 0.0012);
+    const oldLy = model.Ly;
+    const newLy = clamp(oldLy * Math.exp(dln), model.minLy, model.maxLy);
+    if (Math.abs(newLy - oldLy) < 1e-9) return;
+
+    const scaleY = newLy / oldLy;
+    model.Ly = newLy;
+    for (const a of model.particles) {
+      a.y *= scaleY;
+      a.y = clamp(a.y, 0.56, model.Ly - 0.56);
+    }
+  }
+
+  function step() {
+    const p = model.particles;
+    const dt = model.dt;
+
+    for (const a of p) {
+      a.vx += 0.5 * a.fx * dt;
+      a.vy += 0.5 * a.fy * dt;
+      a.x += a.vx * dt;
+      a.y += a.vy * dt;
+      applyWalls(a);
+    }
+
+    computeForces();
+
+    for (const a of p) {
+      a.vx += 0.5 * a.fx * dt;
+      a.vy += 0.5 * a.fy * dt;
+    }
+
+    thermostat(dt);
+    measureThermodynamics();
+    applyPressureControl(dt);
+  }
+
+  function analyzeStructure() {
+    const p = model.particles;
+    const N = p.length;
+    const parent = Array.from({ length:N }, (_, i) => i);
+    const size = Array(N).fill(1);
+    const neighbors = Array.from({ length:N }, () => []);
+
+    function find(x) {
+      while (parent[x] !== x) {
+        parent[x] = parent[parent[x]];
+        x = parent[x];
+      }
+      return x;
+    }
+
+    function unite(a, b) {
+      a = find(a); b = find(b);
+      if (a === b) return;
+      if (size[a] < size[b]) [a, b] = [b, a];
+      parent[b] = a;
+      size[a] += size[b];
+    }
+
+    const bondCut2 = 1.55 ** 2;
+    const orderCut2 = 1.45 ** 2;
+
+    for (let i = 0; i < N - 1; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const dx = p[j].x - p[i].x;
+        const dy = p[j].y - p[i].y;
+        const r2 = dx * dx + dy * dy;
+        if (r2 < bondCut2) unite(i, j);
+        if (r2 < orderCut2) {
+          neighbors[i].push([dx, dy]);
+          neighbors[j].push([-dx, -dy]);
+        }
+      }
+    }
+
+    let largest = 1;
+    for (let i = 0; i < N; i++) {
+      if (find(i) === i) largest = Math.max(largest, size[i]);
+    }
+
+    let neighborSum = 0;
+    let psiSum = 0;
+    let psiCount = 0;
+    for (const list of neighbors) {
+      neighborSum += list.length;
+      if (list.length >= 3) {
+        let re = 0, im = 0;
+        for (const [dx, dy] of list) {
+          const theta = Math.atan2(dy, dx);
+          re += Math.cos(6 * theta);
+          im += Math.sin(6 * theta);
+        }
+        psiSum += Math.hypot(re, im) / list.length;
+        psiCount++;
+      }
+    }
+
+    return {
+      clusterFraction: largest / N,
+      avgNeighbors: neighborSum / N,
+      psi6: psiCount ? psiSum / psiCount : 0
+    };
+  }
+
+  function stateFrom(m) {
+    const rho = model.particles.length / (model.Lx * model.Ly);
+    const T = model.measuredT;
+
+    if (m.clusterFraction < 0.45 && m.avgNeighbors < 1.7 && rho < 0.18) {
+      return ["気体的", "粒子が容器全体に分散し、近接関係が少ない"];
+    }
+    if (m.clusterFraction > 0.72 && m.psi6 > 0.66 && T < 0.34) {
+      return ["固体的", "凝集し、規則性が高く、ほぼ一定位置で振動する"];
+    }
+    if (m.clusterFraction > 0.58 && m.avgNeighbors > 2.1) {
+      return ["液体的", "凝集しているが、粒子が互いの位置を入れ替える"];
+    }
+    return ["共存・遷移的", "凝集体と分散粒子、または秩序の変化が同時に見られる"];
+  }
+
+  function speedColor(speed) {
+    const s = clamp(speed / 2.2, 0, 1);
+    const r = Math.round(55 + 175 * s);
+    const g = Math.round(120 - 45 * s);
+    const b = Math.round(195 - 125 * s);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  function drawArrow(x1, y1, x2, y2) {
+    const ang = Math.atan2(y2 - y1, x2 - x1);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+    const head = 5;
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - head * Math.cos(ang - Math.PI / 6), y2 - head * Math.sin(ang - Math.PI / 6));
+    ctx.lineTo(x2 - head * Math.cos(ang + Math.PI / 6), y2 - head * Math.sin(ang + Math.PI / 6));
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function drawPiston(xLeft, xRight, yTop, scale) {
+    const width = xRight - xLeft;
+    const pistonH = 13;
+
+    ctx.fillStyle = "#d7ad4c";
+    ctx.strokeStyle = "#765716";
+    ctx.lineWidth = 2;
+    ctx.fillRect(xLeft, yTop - pistonH, width, pistonH);
+    ctx.strokeRect(xLeft, yTop - pistonH, width, pistonH);
+
+    const normalized = (model.targetP - 0.02) / (1.20 - 0.02);
+    const weightCount = 1 + Math.round(clamp(normalized, 0, 1) * 5);
+    const blockW = 36;
+    const blockH = 12;
+    const gap = 4;
+    const totalW = weightCount * blockW + (weightCount - 1) * gap;
+    let startX = xLeft + (width - totalW) / 2;
+
+    for (let i = 0; i < weightCount; i++) {
+      const bx = startX + i * (blockW + gap);
+      ctx.fillStyle = "#c7cbd0";
+      ctx.strokeStyle = "#626a72";
+      ctx.lineWidth = 1.2;
+      ctx.fillRect(bx, yTop - pistonH - blockH - 3, blockW, blockH);
+      ctx.strokeRect(bx, yTop - pistonH - blockH - 3, blockW, blockH);
+    }
+
+    ctx.strokeStyle = "rgba(125,83,12,.75)";
+    ctx.fillStyle = "rgba(125,83,12,.75)";
+    ctx.lineWidth = 2;
+    const arrowY1 = yTop - pistonH - blockH - 24;
+    const arrowY2 = yTop - pistonH - 3;
+    for (let i = 1; i <= 3; i++) {
+      const x = xLeft + width * i / 4;
+      drawArrow(x, arrowY1, x, arrowY2);
+    }
+
+    ctx.fillStyle = "#65480f";
+    ctx.font = "bold 13px system-ui, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(`外圧 P* = ${model.targetP.toFixed(2)}`, (xLeft + xRight) / 2, arrowY1 - 7);
+    ctx.textAlign = "start";
+  }
+
+  function draw() {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = "#fbfcfd";
+    ctx.fillRect(0, 0, W, H);
+
+    const marginX = 70;
+    const bottomMargin = 42;
+    const topReserve = 80;
+    const scale = Math.min((W - 2 * marginX) / model.Lx, (H - bottomMargin - topReserve) / model.displayMaxLy);
+    const xLeft = (W - model.Lx * scale) / 2;
+    const xRight = xLeft + model.Lx * scale;
+    const yBottom = H - bottomMargin;
+    const yTop = yBottom - model.Ly * scale;
+
+    const px = x => xLeft + x * scale;
+    const py = y => yBottom - y * scale;
+
+    ctx.fillStyle = "rgba(226,237,246,.35)";
+    ctx.fillRect(xLeft, yTop, model.Lx * scale, model.Ly * scale);
+
+    ctx.strokeStyle = "#72808d";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(xLeft, yTop);
+    ctx.lineTo(xLeft, yBottom);
+    ctx.lineTo(xRight, yBottom);
+    ctx.lineTo(xRight, yTop);
+    ctx.stroke();
+
+    drawPiston(xLeft, xRight, yTop, scale);
+
+    const p = model.particles;
+
+    if (bondCheck.checked) {
+      const maxR = 1.65;
+      const maxR2 = maxR * maxR;
+      for (let i = 0; i < p.length - 1; i++) {
+        for (let j = i + 1; j < p.length; j++) {
+          const dx = p[j].x - p[i].x;
+          const dy = p[j].y - p[i].y;
+          const r2 = dx * dx + dy * dy;
+          if (r2 < maxR2) {
+            const r = Math.sqrt(r2);
+            const alpha = clamp((maxR - r) / 0.65 * 0.55, 0, 0.55);
+            ctx.strokeStyle = `rgba(41,111,176,${alpha})`;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(px(p[i].x), py(p[i].y));
+            ctx.lineTo(px(p[j].x), py(p[j].y));
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    if (velCheck.checked) {
+      ctx.strokeStyle = "rgba(169,63,43,.80)";
+      ctx.fillStyle = "rgba(169,63,43,.80)";
+      ctx.lineWidth = 1.2;
+      const arrowScale = 8.5;
+      for (const a of p) {
+        const x = px(a.x);
+        const y = py(a.y);
+        drawArrow(x, y, x + a.vx * arrowScale, y - a.vy * arrowScale);
+      }
+    }
+
+    const radius = 0.38 * scale;
+    for (const a of p) {
+      const speed = Math.hypot(a.vx, a.vy);
+      ctx.beginPath();
+      ctx.arc(px(a.x), py(a.y), radius, 0, Math.PI * 2);
+      ctx.fillStyle = speedColor(speed);
+      ctx.fill();
+      ctx.strokeStyle = "#244d73";
+      ctx.lineWidth = 1.1;
+      ctx.stroke();
+    }
+
+    const modeText = lockVolumeCheck.checked ? "容積固定：内圧を測定" : "外圧制御：ピストンが移動";
+    ctx.fillStyle = "rgba(20,31,42,.76)";
+    ctx.font = "13px system-ui, sans-serif";
+    ctx.fillText(modeText, xLeft + 10, yBottom + 26);
+    ctx.fillText(`P*int=${model.measuredP.toFixed(2)}  A=${(model.Lx * model.Ly).toFixed(0)}  N/A=${(p.length / (model.Lx * model.Ly)).toFixed(3)}`, xLeft + 250, yBottom + 26);
+  }
+
+  function formatPressure(x) {
+    if (!Number.isFinite(x)) return "–";
+    return x.toFixed(3);
+  }
+
+  function updateReadouts() {
+    nOut.value = nSlider.value;
+    tOut.value = Number(tSlider.value).toFixed(2);
+    pOut.value = Number(pSlider.value).toFixed(2);
+
+    const m = analyzeStructure();
+    const [name, desc] = stateFrom(m);
+    stateText.textContent = name;
+    stateDesc.textContent = desc;
+
+    targetPressureMetric.textContent = model.targetP.toFixed(3);
+    pressureMetric.textContent = formatPressure(model.measuredP);
+    pressureDiffMetric.textContent = formatPressure(model.measuredP - model.targetP);
+    tempMetric.textContent = model.measuredT.toFixed(3);
+    heightMetric.textContent = model.Ly.toFixed(2);
+    areaMetric.textContent = (model.Lx * model.Ly).toFixed(1);
+    densityMetric.textContent = (model.particles.length / (model.Lx * model.Ly)).toFixed(3);
+    clusterMetric.textContent = `${Math.round(m.clusterFraction * 100)}%`;
+    neighborMetric.textContent = m.avgNeighbors.toFixed(2);
+    psiMetric.textContent = m.psi6.toFixed(2);
+
+    const N = Math.max(1, model.particles.length);
+    const kPer = model.measuredT;
+    const uPer = Math.abs(model.attractivePotential) / N;
+    kBar.style.width = `${Math.min(100, (kPer / 2.0) * 100)}%`;
+    uBar.style.width = `${Math.min(100, (uPer / 4.0) * 100)}%`;
+  }
+
+  function animate() {
+    if (model.running) {
+      const steps = slowCheck.checked ? 1 : 5;
+      for (let s = 0; s < steps; s++) step();
+      model.frame++;
+      if (model.frame % 5 === 0) updateReadouts();
+    }
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  nSlider.addEventListener("input", () => { nOut.value = nSlider.value; });
+  nSlider.addEventListener("change", resetParticles);
+
+  tSlider.addEventListener("input", () => {
+    model.targetT = Number(tSlider.value);
+    tOut.value = model.targetT.toFixed(2);
+  });
+
+  pSlider.addEventListener("input", () => {
+    model.targetP = Number(pSlider.value);
+    pOut.value = model.targetP.toFixed(2);
+  });
+
+  pauseBtn.addEventListener("click", () => {
+    model.running = !model.running;
+    pauseBtn.textContent = model.running ? "一時停止" : "再開";
+  });
+
+  resetBtn.addEventListener("click", resetParticles);
+
+  document.querySelectorAll("[data-temp]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const T = Number(btn.dataset.temp);
+      tSlider.value = T.toFixed(2);
+      model.targetT = T;
+      tOut.value = T.toFixed(2);
+    });
+  });
+
+  document.querySelectorAll("[data-pressure]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const P = Number(btn.dataset.pressure);
+      pSlider.value = P.toFixed(2);
+      model.targetP = P;
+      pOut.value = P.toFixed(2);
+    });
+  });
+
+  lockVolumeCheck.addEventListener("change", updateReadouts);
+
+  resetParticles();
+  animate();
+})();
+</script>
+</body>
+</html>
