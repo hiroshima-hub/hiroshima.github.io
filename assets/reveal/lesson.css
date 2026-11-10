@@ -35,3 +35,8 @@
   border-radius: 8px;
   background: white;
 }
+
+/* スライド内の文字を標準で左揃えにする */
+.reveal .slides section {
+  text-align: left;
+}
