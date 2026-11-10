@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>化学基礎 授業スライド</title>
+
+  <link rel="stylesheet"
+        href="../assets/reveal/reveal.css">
+  <link rel="stylesheet"
+        href="../assets/reveal/simple.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides" id="slides"></div>
+  </div>
+
+  <script src="../assets/reveal/reveal.js"></script>
+  <script src="../assets/reveal/markdown.js"></script>
+
+  <script>
+    // URLから授業番号を取得
+    const params = new URLSearchParams(
+      window.location.search
+    );
+    const lesson = params.get("lesson");
+
+    const container = document.getElementById("slides");
+
+    // 2桁の授業番号のみ許可
+    if (lesson && /^\d{2}$/.test(lesson)) {
+      const section = document.createElement("section");
+
+      // 該当するMarkdownを読み込む
+      section.setAttribute(
+        "data-markdown",
+        `lessons/${lesson}.md`
+      );
+
+      container.appendChild(section);
+    } else {
+      container.innerHTML =
+        "<section><h2>授業が指定されていません</h2></section>";
+    }
+
+    // スライドを開始
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      transition: "none",
+      plugins: [RevealMarkdown]
+    });
+  </script>
+</body>
+</html>
