@@ -1,0 +1,32 @@
+/* 授業一覧へ戻るリンク */
+.back-to-list {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  background: rgba(235, 240, 237, 0.94);
+  color: #203b36;
+
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* マウスを重ねた場合 */
+.back-to-list:hover,
+.back-to-list:focus-visible {
+  background: #d1e3d9;
+  outline: 2px solid #24654f;
+}
+
+/* 印刷時は非表示 */
+@media print {
+  .back-to-list {
+    display: none;
+  }
+}

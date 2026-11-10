@@ -6,55 +6,72 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>化学基礎 授業スライド</title>
+  <title>化学基礎｜授業スライド</title>
 
+  <!-- reveal.js専用CSS -->
   <link rel="stylesheet"
-        href="../assets/reveal/reveal.css">
+        href="../../assets/reveal/reveal.css">
   <link rel="stylesheet"
-        href="../assets/reveal/simple.css">
+        href="../../assets/reveal/simple.css">
+  <link rel="stylesheet"
+        href="../../assets/reveal/slide-nav.css">
 </head>
 
 <body>
+  <a href="./index.html" class="back-to-list">
+  ← 授業一覧へ
+  </a>
   <div class="reveal">
-    <div class="slides" id="slides"></div>
+    <div class="slides" id="slide-container"></div>
   </div>
 
-  <script src="../assets/reveal/reveal.js"></script>
-  <script src="../assets/reveal/markdown.js"></script>
+  <!-- reveal.js -->
+  <script src="../../assets/reveal/reveal.js"></script>
+  <script src="../../assets/reveal/markdown.js"></script>
 
   <script>
-    // URLから授業番号を取得
     const params = new URLSearchParams(
       window.location.search
     );
+
     const lesson = params.get("lesson");
+    const container = document.getElementById(
+      "slide-container"
+    );
 
-    const container = document.getElementById("slides");
+    // 授業番号：2～3桁の数字のみ
+    if (lesson && /^\d{2,3}$/.test(lesson)) {
 
-    // 2桁の授業番号のみ許可
-    if (lesson && /^\d{2}$/.test(lesson)) {
       const section = document.createElement("section");
 
-      // 該当するMarkdownを読み込む
       section.setAttribute(
         "data-markdown",
-        `lessons/${lesson}.md`
+        `lesson/${lesson}.md`
       );
 
       container.appendChild(section);
+
     } else {
-      container.innerHTML =
-        "<section><h2>授業が指定されていません</h2></section>";
+
+      const section = document.createElement("section");
+      const heading = document.createElement("h2");
+      heading.textContent = "授業が指定されていません";
+
+      section.appendChild(heading);
+      container.appendChild(section);
     }
 
-    // スライドを開始
     Reveal.initialize({
       hash: true,
       controls: true,
       progress: true,
+      center: true,
+      width: 1280,
+      height: 720,
       transition: "none",
       plugins: [RevealMarkdown]
     });
   </script>
+
 </body>
 </html>
