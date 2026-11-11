@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="310" viewBox="0 0 1120 310" font-family="Yu Gothic,Meiryo,sans-serif">
+<rect x="1" y="1" width="1118" height="308" rx="16" fill="#f7faf8" stroke="#d1ded9"/>
+<text x="229" y="63" text-anchor="middle" font-size="27" fill="#193b36">既知の元素</text>
+<rect x="122" y="88" width="213" height="112" rx="10" fill="#fff" stroke="#d1ded9"/>
+<text x="229" y="161" text-anchor="middle" font-size="51" fill="#193b36" font-weight="700">Al</text>
+<path d="M359 144L476 144" fill="none" stroke="#187b75" stroke-width="4" stroke-dasharray=""/><path d="M463.7 150.7 L476 144 L463.7 137.3" fill="none" stroke="#187b75" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="504" y="88" width="210" height="112" rx="10" fill="#faf0d9" stroke="#d1ded9"/>
+<text x="609" y="160" text-anchor="middle" font-size="49" fill="#193b36" font-weight="700">？</text>
+<text x="610" y="63" text-anchor="middle" font-size="27" fill="#193b36">Alの下の空所</text>
+<path d="M741 144L824 144" fill="none" stroke="#187b75" stroke-width="4" stroke-dasharray=""/><path d="M811.7 150.7 L824 144 L811.7 137.3" fill="none" stroke="#187b75" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="848" y="88" width="174" height="112" rx="10" fill="#ecf4ef" stroke="#d1ded9"/>
+<text x="935" y="160" text-anchor="middle" font-size="51" fill="#193b36" font-weight="700">Ga</text>
+<text x="936" y="63" text-anchor="middle" font-size="27" fill="#193b36">後に発見</text>
+<text x="560" y="259" text-anchor="middle" font-size="29" fill="#193b36">空所の位置から、未知の元素の性質を予測した。</text>
+</svg>

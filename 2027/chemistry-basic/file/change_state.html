@@ -58,6 +58,22 @@
   footer { max-width:1500px; margin:0 auto 14px; padding:0 12px; color:var(--muted); font-size:11px; }
   @media (max-width:940px) { main { grid-template-columns:1fr; } aside { display:grid; grid-template-columns:1fr 1fr; } .notes { grid-column:1/-1; } }
   @media (max-width:650px) { aside { display:flex; } }
+
+/* 第3回の投影では外圧を固定し、温度だけを比較する。 */
+.lesson-view [hidden] { display: none !important; }
+.lesson-view main { grid-template-columns: minmax(0, 1fr) minmax(215px, 29%); }
+.lesson-view #simCanvas { width: 100%; height: min(62vh, 360px); object-fit: contain; }
+.lesson-view aside { display: block; }
+.lesson-view .preset-row, .lesson-view .buttons { grid-template-columns: 1fr; }
+.lesson-view button { font-size: 18px; min-height: 40px; }
+.lesson-view [aria-pressed="true"] { background: #176350; color: white; }
+.lesson-view header p { font-size: 18px; color: #173e36; }
+.lesson-view .controls { display: grid; gap: 8px; }
+.lesson-view .preset-label { margin: 0; }
+@media (max-width: 520px) {
+  .lesson-view main { grid-template-columns: 1fr; }
+  .lesson-view .preset-row, .lesson-view .buttons { display: flex; flex-wrap: wrap; }
+}
 </style>
 </head>
 <body>
@@ -204,6 +220,25 @@
   const psiMetric = document.getElementById("psiMetric");
   const kBar = document.getElementById("kBar");
   const uBar = document.getElementById("uBar");
+
+
+  const lessonView = new URLSearchParams(location.search).get("view") === "lesson";
+  if (lessonView) {
+    document.body.classList.add("lesson-view");
+    document.querySelector("header h1").textContent = "粒子の集まり方と動き方";
+    document.querySelector("header p").textContent = "近くの粒子どうしには引力がはたらく。外圧を一定にして温度を上げ、熱運動が活発になると集まり方がどう変わるかを見よう。";
+    document.querySelector(".controls h2").textContent = "温度を選ぶ";
+    const pressureRow = document.querySelector("[data-pressure]").parentElement;
+    pressureRow.previousElementSibling.hidden = true;
+    pressureRow.hidden = true;
+    document.querySelectorAll(".control-row, .metrics, .notes, .checks, .legend, .preset-label").forEach(item => item.hidden = true);
+    nSlider.value = "36";
+    tSlider.value = "0.12";
+    velCheck.checked = false;
+    document.querySelectorAll("[data-temp]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.temp === tSlider.value));
+    });
+  }
 
   const model = {
     Lx: 40,
@@ -693,6 +728,7 @@
   }
 
   function updateReadouts() {
+    if (lessonView) return;
     nOut.value = nSlider.value;
     tOut.value = Number(tSlider.value).toFixed(2);
     pOut.value = Number(pSlider.value).toFixed(2);
@@ -753,6 +789,11 @@
 
   document.querySelectorAll("[data-temp]").forEach(btn => {
     btn.addEventListener("click", () => {
+      if (lessonView) {
+        document.querySelectorAll("[data-temp]").forEach(button => {
+          button.setAttribute("aria-pressed", String(button === btn));
+        });
+      }
       const T = Number(btn.dataset.temp);
       tSlider.value = T.toFixed(2);
       model.targetT = T;

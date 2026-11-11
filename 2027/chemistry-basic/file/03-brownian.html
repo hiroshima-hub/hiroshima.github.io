@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ブラウン運動と水分子の衝突</title>
+<link rel="stylesheet" href="lesson-model.css">
+<main>
+  <p><strong>茶色の微粒子を追おう。</strong> 進む向きが変わるのはなぜだろう？</p>
+  <div class="controls">
+    <label><input type="checkbox" id="molecules"> 水分子を表示</label>
+    <button type="button" id="pause">一時停止</button>
+    <button type="button" id="reset">初めから</button>
+  </div>
+  <canvas id="scene" width="840" height="240" aria-label="水中の微粒子とその軌跡。水分子は表示を切り替えても衝突し続ける。"></canvas>
+  <p id="explanation" aria-live="polite">観察：微粒子が不規則に動き、その通り道が線で残る。</p>
+  <small>大きさ・時間を誇張した二次元模型。同じ運動に、見えない分子による説明を重ねます。</small>
+</main>
+<script src="03-brownian.js"></script>
+</html>

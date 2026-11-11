@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="324" viewBox="0 0 1120 324" font-family="Yu Gothic,Meiryo,sans-serif">
+<rect x="1" y="1" width="1118" height="322" rx="16" fill="#f7faf8" stroke="#d1ded9"/>
+<path d="M205 75 V130 C147 166 155 240 215 244 C287 249 303 171 250 134 V75 Z" fill="#fff" stroke="#193b36" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M170 197 Q219 190 279 197 Q269 247 219 242 Q179 239 170 197" fill="#c9e9f3" stroke="#2775a2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M250 100 L345 100 L749 212 L749 227" fill="none" stroke="#193b36" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M250 100 L345 100 L749 212 L749 227" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M198 70 H259 V83 H198Z" fill="#a38770" stroke="#193b36" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M222 13 V101" fill="none" stroke="#193b36" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="222.0" cy="101.0" r="7" fill="#b95432"/>
+<text x="114" y="33" text-anchor="middle" font-size="24" fill="#193b36">温度計</text>
+<path d="M153 31L216 32" fill="none" stroke="#193b36" stroke-width="3" stroke-dasharray=""/>
+<text x="92" y="170" text-anchor="middle" font-size="27" fill="#193b36">食塩水</text>
+<path d="M137 168L194 205" fill="none" stroke="#193b36" stroke-width="3" stroke-dasharray=""/>
+<path d="M197 278 Q186 262 206 252 Q201 266 220 255 Q233 273 223 280Z" fill="#eaa249" stroke="#b95432" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M393 98 L673 176 L663 209 L384 132 Z" fill="#c9e9f3" stroke="#2775a2" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M392 114L668 192" fill="none" stroke="#193b36" stroke-width="4" stroke-dasharray=""/>
+<path d="M413 103 l5 -24" fill="none" stroke="#2775a2" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M643 203 l-5 24" fill="none" stroke="#2775a2" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="482" y="53" text-anchor="middle" font-size="23" fill="#193b36">冷却水 出口</text>
+<path d="M436 74L454 55" fill="none" stroke="#2775a2" stroke-width="4" stroke-dasharray=""/><path d="M450.4 68.5 L454 55 L440.7 59.3" fill="none" stroke="#2775a2" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="574" y="267" text-anchor="middle" font-size="23" fill="#193b36">冷却水 入口</text>
+<path d="M610 245L636 222" fill="none" stroke="#2775a2" stroke-width="4" stroke-dasharray=""/><path d="M631.2 235.2 L636 222 L622.4 225.1" fill="none" stroke="#2775a2" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="775" y="103" text-anchor="middle" font-size="25" fill="#193b36">蒸気の通り道</text>
+<path d="M649 125L710 141" fill="none" stroke="#187b75" stroke-width="4" stroke-dasharray=""/><path d="M696.4 144.4 L710 141 L699.8 131.4" fill="none" stroke="#187b75" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="722" y="253" width="95" height="36" rx="3" fill="#c9e9f3" stroke="none"/><path d="M708 222 l10 8 v57 q0 5 6 5 h91 q6 0 6 -5 v-65" fill="none" stroke="#193b36" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M723 252L816 252" fill="none" stroke="#2775a2" stroke-width="2" stroke-dasharray=""/>
+<text x="945" y="252" text-anchor="middle" font-size="27" fill="#193b36">留出液（水）</text>
+<path d="M830 251L855 251" fill="none" stroke="#193b36" stroke-width="3" stroke-dasharray=""/>
+<text x="172" y="307" text-anchor="middle" font-size="22" fill="#193b36">加熱</text>
+<text x="871" y="52" text-anchor="middle" font-size="24" fill="#193b36" font-weight="700">球部は枝管の入口の高さ</text>
+</svg>

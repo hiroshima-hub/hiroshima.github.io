@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>電子殻モデル｜水素からカルシウムまで</title>
+<link rel="stylesheet" href="lesson-model.css">
+<main>
+  <p><strong>中性原子の電子配置</strong>　He→Li、Ne→Na、Ar→Kの変化を比べよう。</p>
+  <div class="controls">
+    <button type="button" id="prev" aria-label="原子番号を一つ減らす">−</button>
+    <label>原子番号 <input id="number" type="range" min="1" max="20" value="1"></label>
+    <button type="button" id="next" aria-label="原子番号を一つ増やす">＋</button>
+    <label>見る角度 <input id="angle" type="range" min="0" max="360" value="18"></label>
+  </div>
+  <div class="shell-layout">
+    <svg id="atom" viewBox="0 0 300 300" role="img" aria-label="半透明の球面で表した電子殻">
+      <defs><radialGradient id="shell" cx="32%" cy="25%" r="80%"><stop stop-color="#f3fffd" stop-opacity=".06"/><stop offset=".8" stop-color="#92cbc0" stop-opacity=".11"/><stop offset="1" stop-color="#388e85" stop-opacity=".28"/></radialGradient></defs>
+      <g id="drawing"></g>
+    </svg>
+    <div aria-live="polite">
+      <h2 id="element"></h2>
+      <p id="configuration"></p>
+      <p id="outer"></p>
+    </div>
+  </div>
+  <small>点は電子の数、球面は殻を表す模式図。電子の位置や運動の軌道を表してはいません。</small>
+</main>
+<script src="05-shells.js"></script>
+</html>
