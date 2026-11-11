@@ -1,0 +1,36 @@
+/* 旧教材のクラス名も同じ宣言で受け付ける。 */
+.reveal .red,
+.reveal .u-text-red {
+  color: #c62828;
+}
+
+.reveal .blue,
+.reveal .u-text-blue {
+  color: #1565c0;
+}
+
+.reveal .large,
+.reveal .u-text-large {
+  font-size: 1.6em;
+}
+
+.reveal .small,
+.reveal .u-text-small {
+  font-size: 0.65em;
+}
+
+.reveal .text-center,
+.reveal .u-text-center {
+  text-align: center;
+}
+
+.reveal .text-right,
+.reveal .u-text-right {
+  text-align: right;
+}
+
+.reveal .left,
+.reveal .text-left,
+.reveal .u-text-left {
+  text-align: left;
+}

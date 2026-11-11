@@ -1,0 +1,12 @@
+/* 本文の既定配置と reveal.js が生成するページ番号 */
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slide-number {
+  right: 92px;
+  bottom: 14px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #193b34;
+}

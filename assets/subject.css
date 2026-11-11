@@ -104,9 +104,6 @@
   border-left: 4px solid #17634f;
 }
 
-.page-back {
-  margin-top: 36px;
-}
 
 /* スマートフォンでは縦1列 */
 @media (max-width: 720px) {

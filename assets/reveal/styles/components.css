@@ -1,0 +1,65 @@
+/* 授業内の強調枠と埋め込み教材 */
+.reveal .important,
+.reveal .c-callout {
+  padding: 20px;
+  border: 3px solid #c62828;
+  border-radius: 8px;
+}
+
+.reveal .experiment-frame,
+.reveal .c-experiment-frame {
+  width: 100%;
+  height: 540px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background: white;
+}
+
+.reveal .timer-frame,
+.reveal .c-timer-frame {
+  display: block;
+  width: min(600px, 100%);
+  height: 350px;
+  margin: 0 auto;
+  border: none;
+}
+
+/* 図の共通寸法。各修飾子は用途に合わせて上書きする。 */
+.reveal .lesson-visual,
+.reveal .concept-image,
+.reveal .c-figure {
+  display: block;
+  width: auto;
+  max-width: 98%;
+  max-height: 210px;
+  object-fit: contain;
+  margin: 14px auto 0;
+}
+
+.reveal .concept-image,
+.reveal .c-figure--inset {
+  max-width: 96%;
+  margin-top: 12px;
+}
+
+.reveal .lesson-visual--short,
+.reveal .c-figure--short {
+  max-height: 160px;
+}
+
+.reveal .lesson-visual--elements,
+.reveal .c-figure--tall {
+  max-height: 445px;
+  max-width: 98%;
+  width: auto;
+}
+
+.reveal .lesson-visual--chart,
+.reveal .c-figure--full {
+  display: block;
+  max-height: 585px;
+  max-width: 99%;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
