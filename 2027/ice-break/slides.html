@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>化学基礎｜授業スライド</title>
+
+  <!-- reveal.js専用CSS -->
+  <link rel="stylesheet"
+        href="../../assets/reveal/reveal.css">
+  <link rel="stylesheet"
+        href="../../assets/reveal/simple.css">
+  <link rel="stylesheet"
+        href="../../assets/reveal/slide-nav.css">
+  <link rel="stylesheet"
+        href="../../assets/reveal/lesson.css">
+</head>
+
+<body>
+  <a href="./index.html" class="back-to-list">
+  ← 授業一覧へ
+  </a>
+  <div class="reveal">
+    <div class="slides" id="slide-container"></div>
+  </div>
+
+  <!-- reveal.js -->
+  <script src="../../assets/reveal/reveal.js"></script>
+  <script src="../../assets/reveal/markdown.js"></script>
+
+  <script>
+    const params = new URLSearchParams(
+      window.location.search
+    );
+
+    const lesson = params.get("lesson");
+    const container = document.getElementById(
+      "slide-container"
+    );
+
+    // 授業番号：2～3桁の数字のみ
+    if (lesson && /^\d{2,3}$/.test(lesson)) {
+
+      const section = document.createElement("section");
+
+      section.setAttribute(
+        "data-markdown",
+        `lesson/${lesson}.md`
+      );
+
+      container.appendChild(section);
+
+    } else {
+
+      const section = document.createElement("section");
+      const heading = document.createElement("h2");
+      heading.textContent = "授業が指定されていません";
+
+      section.appendChild(heading);
+      container.appendChild(section);
+    }
+
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      center: false,
+      width: 1280,
+      height: 720,
+      transition: "none",
+      plugins: [RevealMarkdown]
+    });
+  </script>
+
+</body>
+</html>
