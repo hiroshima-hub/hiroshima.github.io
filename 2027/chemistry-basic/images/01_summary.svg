@@ -1,0 +1,29 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="15" y="12" width="340" height="220" rx="14"/>
+<rect class="card" x="370" y="12" width="340" height="220" rx="14"/>
+<rect class="card" x="725" y="12" width="340" height="220" rx="14"/>
+<text class="body" x="185" y="64">純物質・混合物</text>
+<text class="body" x="540" y="64">単体・化合物</text>
+<text class="body" x="895" y="64">固体・液体・気体</text>
+<text class="small" x="185" y="122">分類で着目するもの</text>
+<text class="small" x="540" y="122">分類で着目するもの</text>
+<text class="small" x="895" y="122">分類で着目するもの</text>
+<text class="title" x="185" y="186">物質の種類</text>
+<text class="title" x="540" y="186">元素の種類</text>
+<text class="title" x="895" y="186">物質の状態</text>
+</svg>

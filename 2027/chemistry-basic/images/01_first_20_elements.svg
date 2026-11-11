@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1512" height="755" viewBox="0 0 1512 755" role="img" aria-label="化学基礎の授業用図解">
+<rect width="1512" height="755" fill="#fff"/>
+<rect x="0" y="0" width="1512" height="755" rx="0" fill="#fff" stroke="#fff" stroke-width="0" />
+<rect x="27" y="24" width="10" height="59" rx="5" fill="#11696a" stroke="#11696a" stroke-width="0" />
+<text x="59" y="72" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="48" font-weight="700" fill="#163947" text-anchor="start" >覚える元素　原子番号1～20</text>
+<text x="1490" y="71" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="23" font-weight="400" fill="#627882" text-anchor="end" >※原子番号順（周期表の配置ではありません）</text>
+<rect x="28" y="111" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="41" y="124" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="65" y="154" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >1</text>
+<text x="168" y="191" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >H</text>
+<text x="168" y="232" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >水素</text>
+<rect x="328" y="111" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="341" y="124" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="365" y="154" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >2</text>
+<text x="468" y="191" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >He</text>
+<text x="468" y="232" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ヘリウム</text>
+<rect x="628" y="111" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="641" y="124" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="665" y="154" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >3</text>
+<text x="768" y="191" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Li</text>
+<text x="768" y="232" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >リチウム</text>
+<rect x="928" y="111" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="941" y="124" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="965" y="154" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >4</text>
+<text x="1068" y="191" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Be</text>
+<text x="1068" y="232" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ベリリウム</text>
+<rect x="1228" y="111" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="1241" y="124" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="1265" y="154" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >5</text>
+<text x="1368" y="191" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >B</text>
+<text x="1368" y="232" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ホウ素</text>
+<rect x="28" y="269" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="41" y="282" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="65" y="312" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >6</text>
+<text x="168" y="349" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >C</text>
+<text x="168" y="390" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >炭素</text>
+<rect x="328" y="269" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="341" y="282" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="365" y="312" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >7</text>
+<text x="468" y="349" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >N</text>
+<text x="468" y="390" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >窒素</text>
+<rect x="628" y="269" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="641" y="282" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="665" y="312" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >8</text>
+<text x="768" y="349" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >O</text>
+<text x="768" y="390" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >酸素</text>
+<rect x="928" y="269" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="941" y="282" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="965" y="312" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >9</text>
+<text x="1068" y="349" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >F</text>
+<text x="1068" y="390" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >フッ素</text>
+<rect x="1228" y="269" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="1241" y="282" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="1265" y="312" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >10</text>
+<text x="1368" y="349" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Ne</text>
+<text x="1368" y="390" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ネオン</text>
+<rect x="28" y="427" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="41" y="440" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="65" y="470" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >11</text>
+<text x="168" y="507" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Na</text>
+<text x="168" y="548" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ナトリウム</text>
+<rect x="328" y="427" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="341" y="440" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="365" y="470" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >12</text>
+<text x="468" y="507" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Mg</text>
+<text x="468" y="548" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >マグネシウム</text>
+<rect x="628" y="427" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="641" y="440" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="665" y="470" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >13</text>
+<text x="768" y="507" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Al</text>
+<text x="768" y="548" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >アルミニウム</text>
+<rect x="928" y="427" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="941" y="440" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="965" y="470" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >14</text>
+<text x="1068" y="507" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Si</text>
+<text x="1068" y="548" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >ケイ素</text>
+<rect x="1228" y="427" width="280" height="143" rx="15" fill="#e9f6f2" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="1241" y="440" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="1265" y="470" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >15</text>
+<text x="1368" y="507" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >P</text>
+<text x="1368" y="548" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >リン</text>
+<rect x="28" y="585" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="41" y="598" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="65" y="628" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >16</text>
+<text x="168" y="665" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >S</text>
+<text x="168" y="706" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >硫黄</text>
+<rect x="328" y="585" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="341" y="598" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="365" y="628" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >17</text>
+<text x="468" y="665" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Cl</text>
+<text x="468" y="706" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >塩素</text>
+<rect x="628" y="585" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="641" y="598" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="665" y="628" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >18</text>
+<text x="768" y="665" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Ar</text>
+<text x="768" y="706" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >アルゴン</text>
+<rect x="928" y="585" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="941" y="598" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="965" y="628" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >19</text>
+<text x="1068" y="665" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >K</text>
+<text x="1068" y="706" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >カリウム</text>
+<rect x="1228" y="585" width="280" height="143" rx="15" fill="#eff5fa" stroke="#b6cdd2" stroke-width="2.3" />
+<rect x="1241" y="598" width="48" height="42" rx="10" fill="#fff" stroke="#b6cdd2" stroke-width="1" />
+<text x="1265" y="628" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#425e69" text-anchor="middle" >20</text>
+<text x="1368" y="665" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="62" font-weight="760" fill="#123b4d" text-anchor="middle" >Ca</text>
+<text x="1368" y="706" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="530" fill="#233b45" text-anchor="middle" >カルシウム</text>
+</svg>

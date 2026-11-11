@@ -64,3 +64,54 @@
   margin: 0 auto;
   border: none;
 }
+
+
+/* 授業スライドの補助画像 */
+.reveal .concept-image {
+  display: block;
+  width: auto;
+  max-width: 96%;
+  max-height: 210px;
+  object-fit: contain;
+  margin: 12px auto 0;
+}
+
+.reveal .lesson-visual {
+  display: block;
+  width: auto;
+  max-width: 98%;
+  max-height: 210px;
+  object-fit: contain;
+  margin: 14px auto 0;
+}
+
+/* 文章が多いスライドでは図を小さくする */
+.reveal .lesson-visual--short {
+  max-height: 160px;
+}
+
+/* ページ番号を右下の矢印から少し離す */
+.reveal .slide-number {
+  right: 92px;
+  bottom: 14px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #193b34;
+}
+
+/* 原子番号1〜20の元素一覧 */
+.reveal .lesson-visual--elements {
+  max-height: 445px;
+  max-width: 98%;
+  width: auto;
+}
+
+/* 最終スライドの分類図 */
+.reveal .lesson-visual--chart {
+  display: block;
+  max-height: 585px;
+  max-width: 99%;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}

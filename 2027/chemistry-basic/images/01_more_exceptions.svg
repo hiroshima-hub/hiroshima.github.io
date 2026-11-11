@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="10" y="10" width="255" height="225" rx="14"/>
+<rect class="card" x="278" y="10" width="255" height="225" rx="14"/>
+<rect class="card" x="546" y="10" width="255" height="225" rx="14"/>
+<rect class="card" x="814" y="10" width="255" height="225" rx="14"/>
+<text class="body" x="137" y="55">オゾン</text>
+<text class="body" x="405" y="55">塩化ナトリウム</text>
+<text class="body" x="673" y="55">超臨界流体</text>
+<text class="body" x="941" y="55">水の三重点</text>
+<text class="title" x="137" y="130">O₃ → O₂</text>
+<text class="title" x="405" y="130">NaCl</text>
+<text class="title" x="673" y="130">CO₂</text>
+<text class="title" x="941" y="130">固・液・気</text>
+<text class="small" x="137" y="194">単体も化学変化する</text>
+<text class="small" x="405" y="194">容易には熱分解しない</text>
+<text class="small" x="673" y="194">気液の境界がない</text>
+<text class="small" x="941" y="194">3つの状態が共存</text>
+</svg>

@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="15" y="10" width="340" height="225" rx="14"/>
+<rect class="card" x="370" y="10" width="340" height="225" rx="14"/>
+<rect class="card" x="725" y="10" width="340" height="225" rx="14"/>
+<text class="title" x="185" y="62">共沸混合物</text>
+<text class="title" x="540" y="62">共晶混合物</text>
+<text class="title" x="895" y="62">食塩水</text>
+<text class="body" x="185" y="115">エタノール＋水</text>
+<text class="body" x="540" y="115">スズ＋鉛</text>
+<text class="body" x="895" y="115">水＋食塩</text>
+<text class="small" x="185" y="170">特定の組成で沸点一定</text>
+<text class="small" x="540" y="170">特定の組成で一定温度で融解</text>
+<text class="small" x="895" y="170">濃度・温度が同じなら</text>
+<text class="small" x="895" y="202">密度も同じ</text>
+</svg>

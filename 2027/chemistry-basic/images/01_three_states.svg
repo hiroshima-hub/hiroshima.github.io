@@ -1,0 +1,39 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="25" y="10" width="330" height="225" rx="14"/>
+<rect class="card" x="375" y="10" width="330" height="225" rx="14"/>
+<rect class="card" x="725" y="10" width="330" height="225" rx="14"/>
+<text class="title" x="190" y="48">固体（氷）</text>
+<text class="title" x="540" y="48">液体（水）</text>
+<text class="title" x="890" y="48">気体（水蒸気）</text>
+<g fill="#4e9dcc">
+<circle cx="135" cy="100" r="18"/><circle cx="175" cy="100" r="18"/>
+<circle cx="215" cy="100" r="18"/><circle cx="255" cy="100" r="18"/>
+<circle cx="135" cy="145" r="18"/><circle cx="175" cy="145" r="18"/>
+<circle cx="215" cy="145" r="18"/><circle cx="255" cy="145" r="18"/>
+<circle cx="135" cy="190" r="18"/><circle cx="175" cy="190" r="18"/>
+<circle cx="215" cy="190" r="18"/><circle cx="255" cy="190" r="18"/>
+<circle cx="438" cy="180" r="19"/><circle cx="480" cy="165" r="19"/>
+<circle cx="522" cy="190" r="19"/><circle cx="564" cy="161" r="19"/>
+<circle cx="606" cy="184" r="19"/><circle cx="647" cy="162" r="19"/>
+<circle cx="460" cy="120" r="19"/><circle cx="530" cy="118" r="19"/>
+<circle cx="590" cy="112" r="19"/><circle cx="640" cy="110" r="19"/>
+<circle cx="785" cy="90" r="13"/><circle cx="935" cy="75" r="13"/>
+<circle cx="865" cy="140" r="13"/><circle cx="1005" cy="165" r="13"/>
+<circle cx="780" cy="193" r="13"/><circle cx="965" cy="209" r="13"/>
+</g>
+</svg>

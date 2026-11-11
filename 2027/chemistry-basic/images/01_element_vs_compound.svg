@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="20" y="12" width="510" height="220" rx="15"/>
+<rect class="card" x="550" y="12" width="510" height="220" rx="15"/>
+<text class="title" x="275" y="50">単体：酸素 O₂</text>
+<text class="title" x="805" y="50">化合物：水 H₂O</text>
+<defs>
+  <g id="oxygen">
+    <circle class="red" cx="-20" r="29"/>
+    <circle class="red" cx="20" r="29"/>
+  </g>
+  <g id="water">
+    <circle class="red" cy="-10" r="30"/>
+    <circle fill="#87b8d8" cx="-35" cy="20" r="19"/>
+    <circle fill="#87b8d8" cx="35" cy="20" r="19"/>
+  </g>
+</defs>
+<use href="#oxygen" x="130" y="130"/>
+<use href="#oxygen" x="275" y="130"/>
+<use href="#oxygen" x="420" y="130"/>
+<use href="#water" x="650" y="130"/>
+<use href="#water" x="805" y="130"/>
+<use href="#water" x="960" y="130"/>
+<text class="small" x="275" y="215">酸素元素だけ</text>
+<text class="small" x="805" y="215">水素元素と酸素元素</text>
+</svg>

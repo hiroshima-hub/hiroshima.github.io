@@ -1,0 +1,44 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="20" y="12" width="510" height="220" rx="15"/>
+<rect class="card" x="550" y="12" width="510" height="220" rx="15"/>
+<text class="title" x="275" y="53">純物質</text>
+<text class="title" x="805" y="53">混合物</text>
+<defs>
+  <g id="a">
+    <circle class="blue" cx="0" cy="0" r="21"/>
+    <circle class="blue" cx="29" cy="0" r="21"/>
+  </g>
+  <g id="b">
+    <circle fill="#e9ac4b" r="24"/>
+  </g>
+</defs>
+<use href="#a" x="120" y="110"/>
+<use href="#a" x="240" y="110"/>
+<use href="#a" x="360" y="110"/>
+<use href="#a" x="120" y="165"/>
+<use href="#a" x="240" y="165"/>
+<use href="#a" x="360" y="165"/>
+<use href="#a" x="650" y="110"/>
+<use href="#b" x="810" y="110"/>
+<use href="#a" x="920" y="110"/>
+<use href="#b" x="670" y="165"/>
+<use href="#a" x="800" y="165"/>
+<use href="#b" x="940" y="165"/>
+<text class="small" x="275" y="216">1種類の粒子</text>
+<text class="small" x="805" y="216">異なる種類の粒子</text>
+</svg>

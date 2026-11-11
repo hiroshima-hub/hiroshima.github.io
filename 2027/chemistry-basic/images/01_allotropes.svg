@@ -1,0 +1,45 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="15" y="10" width="250" height="225" rx="14"/>
+<rect class="card" x="280" y="10" width="250" height="225" rx="14"/>
+<rect class="card" x="545" y="10" width="250" height="225" rx="14"/>
+<rect class="card" x="810" y="10" width="255" height="225" rx="14"/>
+<text class="body" x="140" y="50">ダイヤモンド</text>
+<text class="body" x="405" y="50">黒鉛</text>
+<text class="body" x="670" y="50">酸素 O₂</text>
+<text class="body" x="937" y="50">オゾン O₃</text>
+<g stroke="#4680a9" stroke-width="6" fill="#8db7d2">
+  <path d="M140 83 L85 140 L140 190 L195 140 Z"/>
+  <path d="M140 83 L140 190 M85 140 L195 140"/>
+  <circle cx="140" cy="83" r="12"/><circle cx="85" cy="140" r="12"/>
+  <circle cx="195" cy="140" r="12"/><circle cx="140" cy="190" r="12"/>
+</g>
+<g stroke="#657981" stroke-width="9">
+  <path d="M325 105 L480 105"/>
+  <path d="M325 135 L480 135"/>
+  <path d="M325 165 L480 165"/>
+</g>
+<circle class="red" cx="640" cy="130" r="37"/>
+<circle class="red" cx="700" cy="130" r="37"/>
+<circle class="red" cx="895" cy="145" r="33"/>
+<circle class="red" cx="940" cy="104" r="33"/>
+<circle class="red" cx="985" cy="145" r="33"/>
+<text class="small" x="140" y="222">C</text>
+<text class="small" x="405" y="222">C</text>
+<text class="small" x="670" y="222">酸素のみ</text>
+<text class="small" x="937" y="222">酸素のみ</text>
+</svg>

@@ -1,0 +1,28 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<rect class="card" x="25" y="35" width="290" height="175" rx="18"/>
+<rect class="card" x="395" y="35" width="290" height="175" rx="18"/>
+<rect class="card" x="765" y="35" width="290" height="175" rx="18"/>
+<text class="title" x="170" y="95">観察する</text>
+<text class="small" x="170" y="155">形・色・性質など</text>
+<text class="title" x="540" y="95">着目点を決める</text>
+<text class="small" x="540" y="155">何を比べるか？</text>
+<text class="title" x="910" y="95">分類する</text>
+<text class="small" x="910" y="155">共通点で仲間分け</text>
+<text class="title" x="355" y="143">→</text>
+<text class="title" x="725" y="143">→</text>
+</svg>

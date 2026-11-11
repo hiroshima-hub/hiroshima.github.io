@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<line x1="130" y1="125" x2="950" y2="125"
+      stroke="#8bbcaf" stroke-width="7"/>
+<g fill="#187a63">
+<circle cx="175" cy="125" r="16"/>
+<circle cx="540" cy="125" r="16"/>
+<circle cx="905" cy="125" r="16"/>
+</g>
+<text class="title" x="175" y="45">古代</text>
+<text class="title" x="540" y="45">1661年</text>
+<text class="title" x="905" y="45">1789年</text>
+<text class="body" x="175" y="95">四元素説</text>
+<text class="body" x="540" y="95">ボイル</text>
+<text class="body" x="905" y="95">ラボアジエ</text>
+<text class="small" x="175" y="193">火・空気・水・土</text>
+<text class="small" x="540" y="193">実験を重視</text>
+<text class="small" x="905" y="193">化学分析と元素</text>
+</svg>

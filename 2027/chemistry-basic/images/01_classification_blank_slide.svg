@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="化学基礎の授業用図解">
+<rect width="1600" height="900" fill="#fff"/>
+<rect x="28" y="20" width="11" height="63" rx="5" fill="#168275" stroke="#168275" stroke-width="0" />
+<text x="57" y="73" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="51" font-weight="700" fill="#173949" text-anchor="start" >物質の分類　― 授業の最初に出たものを整理しよう</text>
+<text x="57" y="117" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="500" fill="#5b6f77" text-anchor="start" >※ 物体名は材料名に言い換える。光・音・熱などは「物質」とは分けて考える。</text>
+<rect x="30" y="164" width="1540" height="543" rx="22" fill="#fff" stroke="#345669" stroke-width="3" />
+<rect x="670" y="141" width="260" height="48" rx="24" fill="#234d62" stroke="#234d62" stroke-width="0" />
+<text x="800" y="175" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle" >物　質</text>
+<rect x="63" y="221" width="982" height="445" rx="20" fill="#f7fbff" stroke="#338ac1" stroke-width="3" />
+<rect x="364" y="200" width="374" height="48" rx="24" fill="#dbeefb" stroke="#dbeefb" stroke-width="0" />
+<text x="551" y="234" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="31" font-weight="700" fill="#145a80" text-anchor="middle" >純 物 質</text>
+<rect x="1073" y="221" width="460" height="445" rx="20" fill="#fffaf4" stroke="#cc9650" stroke-width="3" />
+<rect x="1182" y="200" width="242" height="48" rx="24" fill="#fff0d4" stroke="#fff0d4" stroke-width="0" />
+<text x="1303" y="234" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="31" font-weight="700" fill="#946423" text-anchor="middle" >混 合 物</text>
+<rect x="85" y="285" width="456" height="343" rx="16" fill="#eef9f6" stroke="#39a38d" stroke-width="2.5" />
+<text x="109" y="332" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="35" font-weight="700" fill="#18685a" text-anchor="start" >単 体</text>
+<path d="M113 397 H513" stroke="#39a38d" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M113 446 H513" stroke="#39a38d" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M113 495 H513" stroke="#39a38d" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M113 544 H513" stroke="#39a38d" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<rect x="562" y="285" width="456" height="343" rx="16" fill="#eff5fd" stroke="#6a9ccb" stroke-width="2.5" />
+<text x="586" y="332" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="35" font-weight="700" fill="#28587c" text-anchor="start" >化 合 物</text>
+<path d="M590 397 H990" stroke="#6a9ccb" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M590 446 H990" stroke="#6a9ccb" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M590 495 H990" stroke="#6a9ccb" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M590 544 H990" stroke="#6a9ccb" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<rect x="1097" y="285" width="412" height="343" rx="16" fill="#fffaf4" stroke="#d2a15e" stroke-width="2.5" />
+<text x="1121" y="332" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="35" font-weight="700" fill="#946423" text-anchor="start" >混 合 物</text>
+<path d="M1125 397 H1481" stroke="#d2a15e" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M1125 446 H1481" stroke="#d2a15e" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M1125 495 H1481" stroke="#d2a15e" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<path d="M1125 544 H1481" stroke="#d2a15e" stroke-opacity="0.28" stroke-width="1.3" stroke-dasharray="4 9"/>
+<text x="33" y="754" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="29" font-weight="700" fill="#243f4c" text-anchor="start" >別の観点：物質の状態</text>
+<text x="570" y="754" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="500" fill="#687c84" text-anchor="start" >※ 温度・圧力で変わる。純物質・混合物とは独立した分類。</text>
+<rect x="30" y="774" width="499" height="103" rx="14" fill="#f6faf9" stroke="#a5bfc2" stroke-width="2" />
+<text x="52" y="816" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="31" font-weight="700" fill="#214753" text-anchor="start" >固 体</text>
+<path d="M55 856 H502" stroke="#b7c8ca" stroke-width="1.4" stroke-dasharray="5 7"/>
+<rect x="549" y="774" width="499" height="103" rx="14" fill="#f6faf9" stroke="#a5bfc2" stroke-width="2" />
+<text x="571" y="816" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="31" font-weight="700" fill="#214753" text-anchor="start" >液 体</text>
+<path d="M574 856 H1021" stroke="#b7c8ca" stroke-width="1.4" stroke-dasharray="5 7"/>
+<rect x="1068" y="774" width="499" height="103" rx="14" fill="#f6faf9" stroke="#a5bfc2" stroke-width="2" />
+<text x="1090" y="816" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="31" font-weight="700" fill="#214753" text-anchor="start" >気 体</text>
+<path d="M1093 856 H1540" stroke="#b7c8ca" stroke-width="1.4" stroke-dasharray="5 7"/>
+<text x="800" y="896" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#60747e" text-anchor="middle" >同素体：同じ元素からなる性質の異なる単体同士の関係。該当するものがあれば線で結ぼう。</text>
+</svg>

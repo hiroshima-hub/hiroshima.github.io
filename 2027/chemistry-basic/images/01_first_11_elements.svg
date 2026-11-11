@@ -1,0 +1,61 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080" height="245" viewBox="0 0 1080 245">
+<style>
+text {
+  font-family: "Yu Gothic","Meiryo",sans-serif;
+  fill: #173b34;
+  text-anchor: middle;
+}
+.title { font-size: 32px; font-weight: bold; }
+.body  { font-size: 25px; }
+.small { font-size: 20px; }
+.card  { fill: #f2f9f5; stroke: #b8d7cb; stroke-width: 2; }
+.blue  { fill: #397fb5; }
+.red   { fill: #dc6972; }
+</style>
+<rect width="1080" height="245" fill="white"/>
+<text class="title" x="540" y="40">原子番号1～11の元素</text><rect class="card" x="28" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="70" y="82">1</text>
+<text x="70" y="129" font-size="35" font-weight="bold">H</text>
+<text x="70" y="169" font-size="13">水素</text>
+<rect class="card" x="122" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="164" y="82">2</text>
+<text x="164" y="129" font-size="35" font-weight="bold">He</text>
+<text x="164" y="169" font-size="13">ヘリウム</text>
+<rect class="card" x="216" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="258" y="82">3</text>
+<text x="258" y="129" font-size="35" font-weight="bold">Li</text>
+<text x="258" y="169" font-size="13">リチウム</text>
+<rect class="card" x="310" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="352" y="82">4</text>
+<text x="352" y="129" font-size="35" font-weight="bold">Be</text>
+<text x="352" y="169" font-size="13">ベリリウム</text>
+<rect class="card" x="404" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="446" y="82">5</text>
+<text x="446" y="129" font-size="35" font-weight="bold">B</text>
+<text x="446" y="169" font-size="13">ホウ素</text>
+<rect class="card" x="498" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="540" y="82">6</text>
+<text x="540" y="129" font-size="35" font-weight="bold">C</text>
+<text x="540" y="169" font-size="13">炭素</text>
+<rect class="card" x="592" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="634" y="82">7</text>
+<text x="634" y="129" font-size="35" font-weight="bold">N</text>
+<text x="634" y="169" font-size="13">窒素</text>
+<rect class="card" x="686" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="728" y="82">8</text>
+<text x="728" y="129" font-size="35" font-weight="bold">O</text>
+<text x="728" y="169" font-size="13">酸素</text>
+<rect class="card" x="780" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="822" y="82">9</text>
+<text x="822" y="129" font-size="35" font-weight="bold">F</text>
+<text x="822" y="169" font-size="13">フッ素</text>
+<rect class="card" x="874" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="916" y="82">10</text>
+<text x="916" y="129" font-size="35" font-weight="bold">Ne</text>
+<text x="916" y="169" font-size="13">ネオン</text>
+<rect class="card" x="968" y="54" width="84" height="136" rx="9"/>
+<text class="small" x="1010" y="82">11</text>
+<text x="1010" y="129" font-size="35" font-weight="bold">Na</text>
+<text x="1010" y="169" font-size="13">ナトリウム</text>
+</svg>
