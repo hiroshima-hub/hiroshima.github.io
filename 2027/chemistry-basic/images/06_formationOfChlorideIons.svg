@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+<title id="svgtitle">単原子イオン：陰イオン（塩素原子から塩化物イオンへ）</title>
+<desc id="svgdesc">電子配置が2、8、7の塩素原子が、電子1個を受け取って電子配置2、8、8の塩化物イオンになる過程を電子殻モデルで示す。</desc>
+<defs>
+  <style>
+    .jp { font-family:"Noto Sans CJK JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+    .math { font-family:"Noto Sans CJK JP", "Segoe UI", sans-serif; }
+    .title { font-size:54px; font-weight:800; fill:#152b45; }
+    .subtitle { font-size:38px; font-weight:750; fill:#145a99; }
+    .body { font-size:25px; fill:#30455b; }
+    .note { font-size:23px; fill:#45566a; }
+    .caption { font-size:26px; font-weight:650; fill:#41556b; }
+    .symbol { font-size:47px; font-weight:650; fill:#193b65; }
+  </style>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#2472b5" />
+  </marker>
+  <marker id="callout" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#506173" />
+  </marker>
+</defs>
+<rect width="1600" height="900" fill="#fff"/>
+<rect x="0" y="0" width="1600" height="10" fill="#256ba8"/>
+<text x="96" y="100" class="jp title">単原子イオン</text>
+<text x="100" y="168" class="jp subtitle">② 陰イオン</text>
+<text x="365" y="164" class="jp body">電子を受け取って安定な電子配置になる</text>
+<rect x="1085" y="51" width="422" height="134" rx="16" fill="#f3f8fe" stroke="#d7e5f5" stroke-width="2"/>
+<text x="1110" y="91" class="jp" fill="#1765a7" font-size="22" font-weight="700">陰イオンになりやすい元素</text>
+<text x="1110" y="130" class="jp note">非金属元素が多い</text>
+<text x="1110" y="163" class="jp note">価電子：5〜7個</text>
+<path d="M 94 207 H 1506" stroke="#dce5ed" stroke-width="2"/>
+<text x="942" y="253" text-anchor="middle" class="jp" fill="#de2b2b" font-size="28" font-weight="750">価電子　7個</text>
+<text x="362" y="285" text-anchor="middle" class="jp caption">塩素原子</text>
+<text x="942" y="285" text-anchor="middle" class="jp caption">塩化物イオン</text>
+
+<g aria-label="電子殻モデル、電子数は2,8,7">
+<circle cx="355" cy="455" r="58" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="455" r="109" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="455" r="160" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="455" r="41" fill="#eaf3fe" stroke="#4c83b6" stroke-width="2.8"/>
+<text x="355" y="466" text-anchor="middle" font-size="30" font-weight="700" class="math" fill="#1c4e7e">17+</text>
+<circle cx="355.00" cy="397.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="513.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="346.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="432.07" cy="377.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="464.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="432.07" cy="532.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="564.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="277.93" cy="532.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="246.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="277.93" cy="377.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="295.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="486.06" cy="363.23" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="505.35" cy="509.72" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="396.41" cy="609.55" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="252.15" cy="577.57" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="195.61" cy="441.06" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="275.00" cy="316.44" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+</g>
+<g aria-label="電子殻モデル、電子数は2,8,8">
+<circle cx="941" cy="455" r="58" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="941" cy="455" r="109" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="941" cy="455" r="160" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="941" cy="455" r="41" fill="#eaf3fe" stroke="#4c83b6" stroke-width="2.8"/>
+<text x="941" y="466" text-anchor="middle" font-size="30" font-weight="700" class="math" fill="#1c4e7e">17+</text>
+<circle cx="941.00" cy="397.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="513.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="346.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1018.07" cy="377.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1050.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1018.07" cy="532.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="564.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="863.93" cy="532.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="832.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="863.93" cy="377.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="295.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1054.14" cy="341.86" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1101.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1054.14" cy="568.14" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="615.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="827.86" cy="568.14" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="781.00" cy="455.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="827.86" cy="341.86" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+</g>
+
+<path d="M 564 455 H 739" fill="none" stroke="#2472b5" stroke-width="5" marker-end="url(#arrow)"/>
+<text x="651" y="418" text-anchor="middle" class="jp" font-size="26" font-weight="700" fill="#1765a7">電子を1個受け取る</text>
+<text x="1207" y="467" class="math" font-size="52" text-anchor="middle" fill="#66788b">+</text>
+<circle cx="1361" cy="455" r="28" fill="#f2f8ff" stroke="#bad5ed" stroke-width="2.5"/>
+<circle cx="1361" cy="455" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2"/>
+<path d="M 1258 365 C 1298 366, 1324 384, 1340 424" fill="none" stroke="#506173" stroke-width="2.4" marker-end="url(#callout)"/>
+<rect x="1188" y="295" width="220" height="96" rx="18" fill="#ffffff" stroke="#bcc8d5" stroke-width="2.5"/>
+<text x="1298" y="344" text-anchor="middle" class="jp" font-size="25" font-weight="700" fill="#31475e">電子1個</text>
+<text x="1298" y="380" text-anchor="middle" class="math" font-size="34" font-weight="700" fill="#145a99">e<tspan dy="-10" font-size="22">−</tspan></text>
+
+<text x="362" y="679" text-anchor="middle" class="math symbol">Cl</text>
+<text x="309" y="690" class="math" font-size="23" font-weight="650" fill="#193b65">17</text>
+<text x="355" y="731" text-anchor="middle" class="math" font-size="31" fill="#213d58">[2, 8, 7]</text>
+
+<text x="650" y="695" text-anchor="middle" class="math" font-size="31" font-weight="700" fill="#145a99">Cl + e<tspan dy="-10" font-size="22">−</tspan><tspan dy="10"/> → Cl<tspan dy="-10" font-size="22">−</tspan></text>
+
+<text x="941" y="679" text-anchor="middle" class="math symbol">Cl</text>
+<text x="309" y="690" opacity="0">17</text>
+<text x="992" y="651" text-anchor="middle" class="math" font-size="27" font-weight="650" fill="#193b65">−</text>
+<text x="941" y="731" text-anchor="middle" class="math" font-size="31" fill="#213d58">[2, 8, 8]</text>
+<text x="1038" y="731" class="jp" font-size="26" fill="#45566b">＝ Ar型（安定）</text>
+<text x="1305" y="731" class="jp" font-size="26" fill="#45566b">（陰イオン）</text>
+
+<rect x="95" y="745" width="1410" height="125" rx="18" fill="#f7fafc" stroke="#dce7f0" stroke-width="2"/>
+<text x="127" y="792" class="jp" font-size="25" font-weight="750" fill="#37536d">電子配置</text>
+<text x="383" y="795" class="math" font-size="31" fill="#213d58">[2, 8, 7]</text>
+<text x="585" y="795" class="math" font-size="31" fill="#145a99">＋ e<tspan dy="-10" font-size="22">−</tspan></text>
+<path d="M 688 785 H 800" stroke="#2472b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="855" y="795" class="math" font-size="31" fill="#213d58">[2, 8, 8]</text>
+<text x="1042" y="794" class="jp" font-size="26" fill="#45566b">＝ Ar型（安定）</text>
+<path d="M 127 818 H 1472" stroke="#e4ebf1" stroke-width="1.5"/>
+<text x="127" y="850" class="jp" font-size="25" font-weight="750" fill="#37536d">名称</text>
+<text x="389" y="850" class="jp" font-size="25" fill="#45566b">非金属名 ＋「化物イオン」</text>
+<text x="1030" y="850" class="jp" font-size="25" fill="#45566b">例：塩化物イオン</text>
+</svg>

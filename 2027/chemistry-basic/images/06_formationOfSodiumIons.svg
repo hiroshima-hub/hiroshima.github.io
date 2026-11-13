@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="svgtitle svgdesc">
+<title id="svgtitle">単原子イオン：陽イオン（ナトリウム原子からナトリウムイオンへ）</title>
+<desc id="svgdesc">電子配置が2、8、1のナトリウム原子が、最外殻電子1個を失い、電子配置2、8のナトリウムイオンと電子になる過程を電子殻モデルで示す。</desc>
+<defs>
+  <style>
+    .jp { font-family:"Noto Sans CJK JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+    .math { font-family:"Noto Sans CJK JP", "Segoe UI", sans-serif; }
+    .title { font-size:54px; font-weight:800; fill:#152b45; }
+    .subtitle { font-size:38px; font-weight:750; fill:#145a99; }
+    .body { font-size:25px; fill:#30455b; }
+    .note { font-size:23px; fill:#45566a; }
+    .caption { font-size:26px; font-weight:650; fill:#41556b; }
+    .symbol { font-size:47px; font-weight:650; fill:#193b65; }
+    .config { font-size:31px; fill:#4a5b6b; }
+  </style>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#2472b5" />
+  </marker>
+</defs>
+<rect width="1600" height="900" fill="#fff"/>
+<rect x="0" y="0" width="1600" height="10" fill="#256ba8"/>
+<text x="96" y="100" class="jp title">単原子イオン</text>
+<text x="100" y="168" class="jp subtitle">① 陽イオン</text>
+<text x="365" y="164" class="jp body">電子を失って安定な電子配置になる</text>
+<!-- source notes -->
+<rect x="1085" y="51" width="422" height="134" rx="16" fill="#f3f8fe" stroke="#d7e5f5" stroke-width="2"/>
+<text x="1110" y="91" class="jp" fill="#1765a7" font-size="22" font-weight="700">陽イオンになりやすい元素</text>
+<text x="1110" y="130" class="jp note">金属元素が多い</text>
+<text x="1110" y="163" class="jp note">価電子：1〜3個</text>
+<path d="M 94 207 H 1506" stroke="#dce5ed" stroke-width="2"/>
+<!-- labels above electron shells -->
+<text x="362" y="263" text-anchor="middle" class="jp caption">ナトリウム原子</text>
+<text x="942" y="263" text-anchor="middle" class="jp caption">ナトリウムイオン</text>
+<text x="1361" y="354" text-anchor="middle" class="jp note">放出した電子</text>
+
+<g aria-label="電子殻モデル、電子数は2,8,1">
+<circle cx="355" cy="445" r="58" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="445" r="109" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="445" r="160" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="355" cy="445" r="41" fill="#eaf3fe" stroke="#4c83b6" stroke-width="2.8"/>
+<text x="355" y="456" text-anchor="middle" font-size="30" font-weight="700" class="math" fill="#1c4e7e">11+</text>
+<circle cx="355.00" cy="387.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="503.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="336.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="432.07" cy="367.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="464.00" cy="445.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="432.07" cy="522.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="355.00" cy="554.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="277.93" cy="522.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="246.00" cy="445.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="277.93" cy="367.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="515.00" cy="445.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+</g>
+<g aria-label="電子殻モデル、電子数は2,8">
+<circle cx="941" cy="445" r="58" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="941" cy="445" r="109" fill="none" stroke="#8ea4b6" stroke-width="3"/>
+<circle cx="941" cy="445" r="41" fill="#eaf3fe" stroke="#4c83b6" stroke-width="2.8"/>
+<text x="941" y="456" text-anchor="middle" font-size="30" font-weight="700" class="math" fill="#1c4e7e">11+</text>
+<circle cx="941.00" cy="387.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="503.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="336.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1018.07" cy="367.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1050.00" cy="445.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="1018.07" cy="522.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="941.00" cy="554.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="863.93" cy="522.07" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="832.00" cy="445.00" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+<circle cx="863.93" cy="367.93" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2.8"/>
+</g>
+<path d="M 564 445 H 739" fill="none" stroke="#2472b5" stroke-width="5" marker-end="url(#arrow)"/>
+<text x="651" y="408" text-anchor="middle" class="jp" font-size="26" font-weight="700" fill="#1765a7">電子を1個失う</text>
+<!-- separated electron -->
+<text x="1207" y="457" class="math" font-size="52" text-anchor="middle" fill="#66788b">+</text>
+<circle cx="1361" cy="445" r="28" fill="#f2f8ff" stroke="#bad5ed" stroke-width="2.5"/>
+<circle cx="1361" cy="445" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2"/>
+<!-- chemical notation for diagram elements -->
+<text x="362" y="679" text-anchor="middle" class="math symbol">Na</text>
+<text x="309" y="690" class="math" font-size="23" font-weight="650" fill="#193b65">11</text>
+<text x="941" y="679" text-anchor="middle" class="math symbol">Na</text>
+<text x="992" y="651" text-anchor="middle" class="math" font-size="27" font-weight="650" fill="#193b65">+</text>
+<text x="1361" y="679" text-anchor="middle" class="math symbol">e</text>
+<text x="1388" y="651" text-anchor="middle" class="math" font-size="26" font-weight="650" fill="#193b65">−</text>
+<!-- explanation area -->
+<rect x="95" y="725" width="1410" height="145" rx="18" fill="#f7fafc" stroke="#dce7f0" stroke-width="2"/>
+<text x="127" y="777" class="jp" font-size="25" font-weight="750" fill="#37536d">電子配置</text>
+<text x="389" y="780" class="math" font-size="31" fill="#213d58">[2, 8, 1]</text>
+<path d="M 611 770 H 723" stroke="#2472b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="778" y="780" class="math" font-size="31" fill="#213d58">[2, 8]</text>
+<text x="965" y="779" class="jp" font-size="26" fill="#45566b">＝ Ne型（安定）</text>
+<path d="M 127 801 H 1472" stroke="#e4ebf1" stroke-width="1.5"/>
+<text x="127" y="841" class="jp" font-size="25" font-weight="750" fill="#37536d">名称</text>
+<text x="389" y="842" class="jp" font-size="25" fill="#45566b">金属名 ＋「イオン」</text>
+<text x="1000" y="842" class="jp" font-size="25" fill="#45566b">例：ナトリウムイオン</text>
+</svg>

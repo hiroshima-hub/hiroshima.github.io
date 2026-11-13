@@ -63,3 +63,57 @@
   margin: 0 auto;
   object-fit: contain;
 }
+
+.chem-nuclide {
+  display: inline-block;
+  position: relative;
+  padding-left: 0.75em;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.chem-nuclide__numbers {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  font-size: 0.55em;
+  line-height: 1;
+}
+
+.chem-nuclide__numbers sup,
+.chem-nuclide__numbers sub {
+  position: static;
+  vertical-align: baseline;
+  font-size: 1em;
+  line-height: 1;
+}
+
+
+/* 2カラムレイアウト */
+.slide-two-col {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 1.5em;
+  align-items: center;
+  width: 100%;
+}
+
+/* 左側：表 */
+.reveal .slide-two-col__left table {
+  margin: 0;
+}
+
+/* 右側：説明 */
+.slide-two-col__right {
+  text-align: left;
+}
+
+.slide-two-col__right p {
+  margin: 0.4em 0;
+}
