@@ -3,6 +3,20 @@
   text-align: left;
 }
 
+/* 化学式を含む見出しは元素記号の大小文字を保つ。 */
+.reveal .c-lesson-heading {
+  text-transform: none;
+  font-family: var(--r-main-font);
+}
+
+/* 授業見出しを使う教材では、投影領域の上に戻るリンク用の余白を取る。 */
+@media screen {
+  .reveal:has(.c-lesson-heading) {
+    top: 48px;
+    height: calc(100% - 48px);
+  }
+}
+
 .reveal .slide-number {
   right: 92px;
   bottom: 14px;

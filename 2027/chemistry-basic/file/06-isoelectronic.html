@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>電子10個の粒子を比べる</title>
+  <link rel="stylesheet" href="lesson-model.css">
+  <style>
+    main { padding-top: 6px; }
+    .controls { margin: 16px 0; }
+    .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    figure { margin: 0; padding: 10px 4px; text-align: center; background: #fff; border: 1px solid #cdded7; border-radius: 10px; }
+    figcaption { font-weight: 700; font-size: 1.5em; }
+    svg { display: block; width: 100%; height: clamp(110px, 34vh, 175px); }
+    button[aria-pressed="true"] { background: #175b4f; color: white; }
+    #result { font-size: 1.12em; }
+    @media (max-width: 520px) { .choices { gap: 4px; } .controls { gap: 5px; } button { padding-inline: 8px; } }
+  </style>
+</head>
+<body>
+<main>
+  <p>電子配置はすべて <strong>2・8</strong>。電子をいちばん強く引きつける原子核はどれ？</p>
+  <div class="controls" role="group" aria-label="比較の段階">
+    <button type="button" data-step="0" aria-pressed="true">電子数</button>
+    <button type="button" data-step="1" aria-pressed="false">陽子数も見る</button>
+    <button type="button" data-step="2" aria-pressed="false">広がりを比べる</button>
+  </div>
+  <div class="choices" id="choices"></div>
+  <p id="result" aria-live="polite"></p>
+  <small>同じ電子配置をもつ孤立した粒子の模式図。円は電子の広がりの目安で、半径の実測値を表すものではありません。</small>
+</main>
+<script>
+  const species = [
+    { name: "F⁻", protons: 9, radius: 78 },
+    { name: "Ne", protons: 10, radius: 65 },
+    { name: "Na⁺", protons: 11, radius: 53 }
+  ];
+  const explanations = [
+    "3種ともK殻に2個、L殻に8個。まず、電子の数をそろえて比較しよう。",
+    "電子はすべて10個。陽子が多いのはどれ？　電子がより内側に引かれるのはどれ？",
+    "電子の広がりは F⁻ ＞ Ne ＞ Na⁺。電子数が同じとき、陽子数が多いほど電子は強く引かれる。"
+  ];
+  const buttons = document.querySelectorAll("[data-step]");
+  function draw({ name, protons, radius }, step) {
+    const size = step === 2 ? radius : 65;
+    let shells = "";
+    for (const [r, count] of [[size * 0.48, 2], [size, 8]]) {
+      shells += `<circle r="${r}" fill="none" stroke="#91b9ae" stroke-width="2"/>`;
+      for (let i = 0; i < count; i++) {
+        const angle = i * 2 * Math.PI / count - Math.PI / 2;
+        shells += `<circle cx="${(r * Math.cos(angle)).toFixed(2)}" cy="${(r * Math.sin(angle)).toFixed(2)}" r="5" fill="#116858"/>`;
+      }
+    }
+    const nucleus = step > 0 ? `<text y="6" text-anchor="middle" font-size="18" font-weight="bold" fill="#923f25">${protons}⁺</text>` : '<circle r="8" fill="#b96844"/>';
+    return `<figure><figcaption>${name}</figcaption><svg viewBox="-90 -90 180 180" aria-hidden="true">${shells}${nucleus}</svg><span>電子10個${step > 0 ? " ／ 陽子" + protons + "個" : ""}</span></figure>`;
+  }
+  function show(step) {
+    document.querySelector("#choices").innerHTML = species.map(item => draw(item, step)).join("");
+    document.querySelector("#result").textContent = explanations[step];
+    for (const button of buttons) button.setAttribute("aria-pressed", String(Number(button.dataset.step) === step));
+  }
+  for (const button of buttons) button.addEventListener("click", () => show(Number(button.dataset.step)));
+  show(0);
+</script>
+</body>
+</html>

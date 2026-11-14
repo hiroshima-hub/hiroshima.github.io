@@ -29,7 +29,7 @@
 <text x="1110" y="130" class="jp note">非金属元素が多い</text>
 <text x="1110" y="163" class="jp note">価電子：5〜7個</text>
 <path d="M 94 207 H 1506" stroke="#dce5ed" stroke-width="2"/>
-<text x="942" y="253" text-anchor="middle" class="jp" fill="#de2b2b" font-size="28" font-weight="750">価電子　7個</text>
+<text x="362" y="253" text-anchor="middle" class="jp" fill="#de2b2b" font-size="28" font-weight="750">価電子　7個</text>
 <text x="362" y="285" text-anchor="middle" class="jp caption">塩素原子</text>
 <text x="942" y="285" text-anchor="middle" class="jp caption">塩化物イオン</text>
 
@@ -85,19 +85,11 @@
 
 <path d="M 564 455 H 739" fill="none" stroke="#2472b5" stroke-width="5" marker-end="url(#arrow)"/>
 <text x="651" y="418" text-anchor="middle" class="jp" font-size="26" font-weight="700" fill="#1765a7">電子を1個受け取る</text>
-<text x="1207" y="467" class="math" font-size="52" text-anchor="middle" fill="#66788b">+</text>
-<circle cx="1361" cy="455" r="28" fill="#f2f8ff" stroke="#bad5ed" stroke-width="2.5"/>
-<circle cx="1361" cy="455" r="8.2" fill="#176fba" stroke="#fff" stroke-width="2"/>
-<path d="M 1258 365 C 1298 366, 1324 384, 1340 424" fill="none" stroke="#506173" stroke-width="2.4" marker-end="url(#callout)"/>
-<rect x="1188" y="295" width="220" height="96" rx="18" fill="#ffffff" stroke="#bcc8d5" stroke-width="2.5"/>
-<text x="1298" y="344" text-anchor="middle" class="jp" font-size="25" font-weight="700" fill="#31475e">電子1個</text>
-<text x="1298" y="380" text-anchor="middle" class="math" font-size="34" font-weight="700" fill="#145a99">e<tspan dy="-10" font-size="22">−</tspan></text>
-
 <text x="362" y="679" text-anchor="middle" class="math symbol">Cl</text>
 <text x="309" y="690" class="math" font-size="23" font-weight="650" fill="#193b65">17</text>
 <text x="355" y="731" text-anchor="middle" class="math" font-size="31" fill="#213d58">[2, 8, 7]</text>
 
-<text x="650" y="695" text-anchor="middle" class="math" font-size="31" font-weight="700" fill="#145a99">Cl + e<tspan dy="-10" font-size="22">−</tspan><tspan dy="10"/> → Cl<tspan dy="-10" font-size="22">−</tspan></text>
+<text x="650" y="695" text-anchor="middle" class="math" font-size="31" font-weight="700" fill="#145a99">Cl ＋ e⁻ → Cl⁻</text>
 
 <text x="941" y="679" text-anchor="middle" class="math symbol">Cl</text>
 <text x="309" y="690" opacity="0">17</text>

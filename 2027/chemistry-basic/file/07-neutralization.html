@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>式が示す比｜食塩の組成と硫酸の中和</title>
+  <link rel="stylesheet" href="lesson-model.css">
+  <style>
+    main { padding-top: 4px; }
+    p { margin-block: 7px; }
+    h2 { font-size: 1.15em; margin: 9px 0 3px; }
+    .equation { font-size: clamp(18px, 3.6vw, 36px); font-weight: 700; color: #165a4c; margin: 7px 0; }
+    .reaction { background: white; border-block: 1px solid #c6dcd2; padding: 6px 16px 12px; margin: 15px 0 9px; }
+    .controls { margin: 9px 0; }
+    button[aria-pressed="true"] { color: white; background: #175b4f; }
+    dl { display: grid; grid-template-columns: repeat(4, 1fr); margin: 8px 0; gap: 6px; }
+    dl div { padding: 6px 3px; text-align: center; background: #eaf3ed; border-radius: 6px; }
+    dt { font-weight: bold; } dd { margin: 2px 0 0; font-size: 1.25em; }
+  </style>
+</head>
+<body>
+<main>
+  <h2>NaCl の 1：1 は何の比？</h2>
+  <p>食塩の結晶に含まれる Na⁺ と Cl⁻ の個数比。結晶の一部を取り分けても、組成式は NaCl。</p>
+  <div class="reaction">
+    <h2>硫酸をすべて中和するには？</h2>
+    <p class="equation">H₂SO₄ ＋ 2NaOH → Na₂SO₄ ＋ 2H₂O</p>
+    <div class="controls" role="group" aria-label="反応させる硫酸の量">
+      <strong>硫酸の量</strong>
+      <button type="button" data-amount="1" aria-pressed="true">1 mol</button>
+      <button type="button" data-amount="2" aria-pressed="false">2 mol</button>
+    </div>
+    <dl>
+      <div><dt>H₂SO₄</dt><dd data-ratio="1">1 mol</dd></div>
+      <div><dt>NaOH</dt><dd data-ratio="2">2 mol</dd></div>
+      <div><dt>Na₂SO₄</dt><dd data-ratio="1">1 mol</dd></div>
+      <div><dt>H₂O</dt><dd data-ratio="2">2 mol</dd></div>
+    </dl>
+    <p id="result" aria-live="polite">硫酸を2倍にしたら、必要なNaOHの量は？</p>
+  </div>
+  <small>mol は物質量の単位。式の前の係数（1は省略）は、反応する量・生成する量の比を表します。</small>
+</main>
+<script>
+  const buttons = document.querySelectorAll("[data-amount]");
+  const amounts = document.querySelectorAll("[data-ratio]");
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      const factor = Number(button.dataset.amount);
+      for (const amount of amounts) amount.textContent = factor * Number(amount.dataset.ratio) + " mol";
+      for (const other of buttons) other.setAttribute("aria-pressed", String(other === button));
+      document.querySelector("#result").textContent = factor === 2
+        ? "NaOHも2倍の4 mol必要。式の係数の比は 1：2：1：2 のまま。"
+        : "硫酸を2倍にしたら、必要なNaOHの量は？";
+    });
+  }
+</script>
+</body>
+</html>
