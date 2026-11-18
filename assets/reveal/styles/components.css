@@ -47,6 +47,26 @@
   max-height: 160px;
 }
 
+/* 図と説明を併置するページ。tallとshortの中間の高さ。 */
+.reveal .c-figure--medium {
+  max-height: 320px;
+}
+
+/* 5列の比較表。分類・例・性質・条件別の結果を並べる。 */
+.reveal .c-comparison-table {
+  width: 100%;
+  table-layout: fixed;
+}
+.reveal .c-comparison-table th:nth-child(1) { width: 10%; }
+.reveal .c-comparison-table th:nth-child(2) { width: 22%; }
+.reveal .c-comparison-table th:nth-child(3) { width: 22%; }
+.reveal .c-comparison-table th:nth-child(4) { width: 18%; }
+.reveal .c-comparison-table th:nth-child(5) { width: 28%; }
+.reveal .c-comparison-table th:first-child,
+.reveal .c-comparison-table td:first-child {
+  white-space: nowrap;
+}
+
 .reveal .lesson-visual--elements,
 .reveal .c-figure--tall {
   max-height: 445px;

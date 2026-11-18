@@ -1,0 +1,24 @@
+/* 結合・結晶の演示教材に共通する配置。既存教材のCSSは上書きしない。 */
+body { padding: 12px 18px; font-size: 24px; }
+h1 { font-size: 1.15em; margin: 0 0 8px; }
+main { max-width: 1100px; }
+.controls { gap: 8px; margin: 8px 0; }
+.controls button { padding: 4px 13px; font-size: 20px; }
+button[aria-pressed="true"] { color: #fff; background: #175f52; border-color: #175f52; }
+button:disabled { opacity: .5; }
+input[type="range"] { width: min(250px, 45vw); vertical-align: middle; }
+select { font: inherit; padding: 7px; border-radius: 6px; border: 1px solid #7b9b90; color: #173e37; background: white; }
+select:focus-visible { outline: 3px solid #aa641f; }
+.model-stage { display: block; width: 100%; height: 260px; background: #fff; border: 1px solid #c8dad3; border-radius: 10px; }
+.model-polarity .model-stage { height: 225px; }
+.model-result { min-height: 2.8em; margin: 8px 0 4px; font-weight: 600; }
+.model-note { display: block; color: #4b625b; font-size: 16px; line-height: 1.4; }
+.model-key { margin: 6px 0; font-size: .85em; }
+@media (max-width: 560px) {
+  body { padding: 8px; font-size: 17px; }
+  h1 { font-size: 1.05em; }
+  .controls button { padding: 5px 9px; }
+  .model-stage, .model-polarity .model-stage { height: auto; aspect-ratio: 1000 / 310; }
+  .model-note { font-size: .85em; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }

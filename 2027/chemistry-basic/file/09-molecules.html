@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>分子の形を回して見る</title>
+<link rel="stylesheet" href="lesson-model.css"><link rel="stylesheet" href="bond-model.css"></head>
+<body><main><h1>分子の形を回して見る</h1>
+<div class="controls"><label>分子 <select id="molecule"><option value="water">H₂O 水</option><option value="co2">CO₂ 二酸化炭素</option><option value="ammonia">NH₃ アンモニア</option><option value="methane">CH₄ メタン</option><option value="hydrogen">H₂ 水素</option><option value="hcl">HCl 塩化水素</option></select></label><label>回転 <input id="rotation" type="range" min="-180" max="180" value="0" aria-label="分子を回転"></label><button id="reset">向きを戻す</button></div><div class="controls" id="polarity-controls" hidden><label><input id="bond-polarity" type="checkbox">結合の偏り</label><label><input id="net-polarity" type="checkbox">分子全体の偏り</label></div>
+<svg id="diagram" class="model-stage" viewBox="0 0 1000 310" role="img" aria-label="分子の形を回して見る"></svg>
+<p id="result" class="model-result" aria-live="polite"></p>
+<small class="model-note">球と棒で表した模式図。電子対の反発を考えると形を理解できる。回転して見え方が変わっても、実際の形は変わらない。</small>
+<noscript>この操作モデルを利用するにはJavaScriptを有効にしてください。</noscript>
+</main><script src="bond-model.js"></script><script src="09-molecules.js"></script></body></html>
