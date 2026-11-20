@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>混合：溶質の物質量を足してから、体積で割る</title>
+<link rel="stylesheet" href="lesson-model.css"><link rel="stylesheet" href="bond-model.css"><link rel="stylesheet" href="quantity-model.css"></head>
+<body class="quantity-dense"><main><h1>混合：溶質の物質量を足してから、体積で割る</h1>
+<div class="controls"><label for="ca">Aの濃度</label><input id="ca" type="range" min="0" max="1" step="0.1" value="0.2"><output id="ca-value" for="ca"></output><label>Aの体積 <select id="va"><option value="100" selected>100mL</option><option value="200">200mL</option><option value="400">400mL</option></select></label></div><div class="controls"><label for="cb">Bの濃度</label><input id="cb" type="range" min="0" max="1" step="0.1" value="0.5"><output id="cb-value" for="cb"></output><label>Bの体積 <select id="vb"><option value="100">100mL</option><option value="200" selected>200mL</option><option value="400">400mL</option></select></label><button id="dilute">Bを水にする</button><button id="reset">例題に戻す</button></div>
+<svg id="diagram" class="model-stage" viewBox="0 0 1000 310" role="img" aria-label="混合：溶質の物質量を足してから、体積で割る"></svg>
+<p id="result" class="model-result" aria-live="polite"></p><small class="model-note">同じ溶質の水溶液を混ぜ、反応は起きないものとする。この例では混合後の体積を、混合前の体積の和として扱う。図の容器は模式図。</small>
+<noscript>この操作教材ではJavaScriptを使用します。</noscript>
+</main><script src="bond-model.js"></script><script src="quantity-model.js"></script><script src="17-mixing.js"></script></body></html>

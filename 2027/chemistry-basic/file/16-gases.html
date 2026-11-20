@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>0℃・1.013×10⁵Paの気体を比べる</title>
+<link rel="stylesheet" href="lesson-model.css"><link rel="stylesheet" href="bond-model.css"><link rel="stylesheet" href="quantity-model.css"></head>
+<body><main><h1>0℃・1.013×10⁵Paの気体を比べる</h1>
+<div class="controls"><label>気体 <select id="gas"><option value="hydrogen">H₂</option><option value="methane">CH₄</option><option value="nitrogen">N₂</option><option value="mixture" selected>N₂とO₂の混合気体</option></select></label><label>体積 <select id="volume"><option value="11.2">11.2L</option><option value="22.4" selected>22.4L</option><option value="44.8">44.8L</option></select></label><label for="oxygen">O₂の割合</label><input id="oxygen" type="range" min="0" max="100" step="10" value="20"><output id="oxygen-value" for="oxygen"></output></div>
+<svg id="diagram" class="model-stage" viewBox="0 0 1000 310" role="img" aria-label="0℃・1.013×10⁵Paの気体を比べる"></svg>
+<p id="result" class="model-result" aria-live="polite"></p><small class="model-note">理想気体としてVₘ＝22.4L/mol、Nₐ＝6.02×10²³ mol⁻¹を使う。空気はN₂とO₂だけで簡略化。表示する丸1個は0.050mol分の分子を表す。</small>
+<noscript>この操作教材ではJavaScriptを使用します。</noscript>
+</main><script src="bond-model.js"></script><script src="quantity-model.js"></script><script src="16-gases.js"></script></body></html>

@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>モル質量Mは、1molあたりの質量［g/mol］</title>
+<link rel="stylesheet" href="lesson-model.css"><link rel="stylesheet" href="bond-model.css"><link rel="stylesheet" href="quantity-model.css"></head>
+<body><main><h1>モル質量Mは、1molあたりの質量［g/mol］</h1>
+<div class="controls"><label>物質 <select id="substance"><option value="water">H₂O 水</option><option value="carbon">C 炭素</option><option value="co2">CO₂ 二酸化炭素</option><option value="salt">NaCl 塩化ナトリウム</option></select></label><label for="amount">物質量</label><input id="amount" type="range" min="0" max="2" step="0.05" value="1"><output id="amount-value" for="amount"></output><button id="reset">1molに戻す</button></div>
+<svg id="diagram" class="model-stage" viewBox="0 0 1000 310" role="img" aria-label="モル質量Mは、1molあたりの質量［g/mol］"></svg>
+<p id="result" class="model-result" aria-live="polite"></p><small class="model-note">Nₐ＝6.02×10²³ mol⁻¹。授業で用いるモル質量の数値は、指定した原子量・分子量・式量の数値に対応する。帯の長さは物質量を表し、粒子の実寸を表さない。</small>
+<noscript>この操作教材ではJavaScriptを使用します。</noscript>
+</main><script src="bond-model.js"></script><script src="quantity-model.js"></script><script src="15-moles.js"></script></body></html>

@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>溶解度：水100gに溶ける溶質の最大質量</title>
+<link rel="stylesheet" href="lesson-model.css"><link rel="stylesheet" href="bond-model.css"><link rel="stylesheet" href="quantity-model.css"></head>
+<body><main><h1>溶解度：水100gに溶ける溶質の最大質量</h1>
+<div id="dissolving-controls" class="controls"><label>水の質量 <select id="water"><option value="50" selected>50g</option><option value="100">100g</option></select></label><label for="added">加えた溶質</label><input id="added" type="range" min="0" max="80" step="5" value="10"><output id="added-value" for="added"></output><button id="saturate">ちょうど飽和</button><button id="excess">さらに10g</button></div><div id="cooling-controls" class="controls" hidden><label for="temperature">温度</label><input id="temperature" type="range" min="20" max="60" step="1" value="60"><output id="temperature-value" for="temperature"></output><button id="cold">20℃まで冷やす</button><button id="hot">60℃に戻す</button></div>
+<svg id="diagram" class="model-stage" viewBox="0 0 1000 310" role="img" aria-label="溶解度：水100gに溶ける溶質の最大質量"></svg>
+<p id="result" class="model-result" aria-live="polite"></p><small class="model-note">架空の物質の計算例。水の蒸発、化学反応、水和物の生成はないものとする。溶液の質量に、溶け残った固体の質量を含めない。</small>
+<noscript>この操作教材ではJavaScriptを使用します。</noscript>
+</main><script src="bond-model.js"></script><script src="quantity-model.js"></script><script src="17-solubility.js"></script></body></html>
